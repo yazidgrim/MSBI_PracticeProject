@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="Yazid-PC\Yazid"
+  DTS:CreatorComputerName="YAZID-PC"
+  DTS:CreationDate="7/6/2014 2:34:25 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{7D7C85A1-3F6A-48C7-BB1C-640C052B623D}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Create STM_SRC"
+  DTS:DTSID="{13F31AE7-8C7C-4D7E-BC2A-2C9F42A1ACCD}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost]"
+      DTS:ObjectName="LocalHost"
+      DTS:DTSID="{C25FEC84-08B0-4F48-A515-04D054817D47}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy Data"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy Data"
+      DTS:DTSID="{CA26E37A-3F7D-4255-9C4C-7209411DD10B}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Database Structure"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Database Structure"
+      DTS:DTSID="{83AEFB09-41E4-4F75-86C1-578094C5ADC1}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C25FEC84-08B0-4F48-A515-04D054817D47}"
+          SQLTask:SqlStatementSource="USE [STM_SRC_test]&#xA;GO&#xA;/****** Object:  Table [dbo].[agency]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[agency](&#xA;&#x9;[agency_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_name] [varchar](50) NULL,&#xA;&#x9;[agency_url] [varchar](50) NULL,&#xA;&#x9;[agency_timezone] [varchar](50) NULL,&#xA;&#x9;[agency_lang] [varchar](50) NULL,&#xA; CONSTRAINT [PK_agency] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[agency_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[calendar_dates]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[calendar_dates](&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[date] [varchar](50) NOT NULL,&#xA;&#x9;[exception_type] [varchar](50) NULL,&#xA; CONSTRAINT [PK_calendar_dates] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[date] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_attributes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_attributes](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[price] [varchar](50) NULL,&#xA;&#x9;[currency_type] [varchar](50) NULL,&#xA;&#x9;[payment_method] [varchar](50) NULL,&#xA;&#x9;[transfers] [varchar](50) NULL,&#xA;&#x9;[transfer_duration] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_attributes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_rules]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_rules](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[origin_id] [varchar](50) NULL,&#xA;&#x9;[destination_id] [varchar](50) NULL,&#xA;&#x9;[contains_id] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_rules] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC,&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[frequencies]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[frequencies](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[start_time] [varchar](50) NULL,&#xA;&#x9;[end_time] [varchar](50) NULL,&#xA;&#x9;[headway_secs] [varchar](50) NULL,&#xA; CONSTRAINT [PK_frequencies] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[routes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[routes](&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_id] [varchar](50) NULL,&#xA;&#x9;[route_short_name] [varchar](50) NULL,&#xA;&#x9;[route_long_name] [varchar](50) NULL,&#xA;&#x9;[route_type] [varchar](50) NULL,&#xA;&#x9;[route_url] [varchar](50) NULL,&#xA;&#x9;[route_color] [varchar](50) NULL,&#xA;&#x9;[route_text_color] [varchar](50) NULL,&#xA; CONSTRAINT [PK_routes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[shapes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[shapes](&#xA;&#x9;[shape_id] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lat] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lon] [varchar](50) NULL,&#xA;&#x9;[shape_pt_sequence] [varchar](50) NULL&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stop_times]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stop_times](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[arrival_time] [varchar](50) NULL,&#xA;&#x9;[departure_time] [varchar](50) NULL,&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_sequence] [varchar](50) NOT NULL,&#xA; CONSTRAINT [PK_stop_times] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC,&#xA;&#x9;[stop_id] ASC,&#xA;&#x9;[stop_sequence] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stops]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stops](&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_code] [varchar](50) NULL,&#xA;&#x9;[stop_name] [varchar](5000) NULL,&#xA;&#x9;[stop_lat] [varchar](50) NULL,&#xA;&#x9;[stop_lon] [varchar](50) NULL,&#xA;&#x9;[stop_url] [varchar](50) NULL,&#xA;&#x9;[wheelchair_boarding] [varchar](50) NULL,&#xA; CONSTRAINT [PK_stops] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[stop_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[trips]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[trips](&#xA;&#x9;[route_id] [varchar](50) NULL,&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[trip_headsign] [varchar](50) NULL,&#xA;&#x9;[wheelchair_accessible] [varchar](50) NULL,&#xA; CONSTRAINT [PK_trips] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_fare_attributes] FOREIGN KEY([fare_id])&#xA;REFERENCES [dbo].[fare_attributes] ([fare_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_fare_attributes]&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_routes]&#xA;GO&#xA;ALTER TABLE [dbo].[routes]  WITH CHECK ADD  CONSTRAINT [FK_routes_agency] FOREIGN KEY([agency_id])&#xA;REFERENCES [dbo].[agency] ([agency_id])&#xA;GO&#xA;ALTER TABLE [dbo].[routes] CHECK CONSTRAINT [FK_routes_agency]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_stops] FOREIGN KEY([stop_id])&#xA;REFERENCES [dbo].[stops] ([stop_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_stops]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_trips] FOREIGN KEY([trip_id])&#xA;REFERENCES [dbo].[trips] ([trip_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_trips]&#xA;GO&#xA;ALTER TABLE [dbo].[trips]  WITH CHECK ADD  CONSTRAINT [FK_trips_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[trips] CHECK CONSTRAINT [FK_trips_routes]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create Database"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create Database"
+      DTS:DTSID="{0700B173-7E51-4332-983B-571C527A548C}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C25FEC84-08B0-4F48-A515-04D054817D47}"
+          SQLTask:SqlStatementSource="USE master&#xA;IF EXISTS(select * from sys.databases where name='STM_SRC_test')&#xA;DROP DATABASE STM_SRC_test&#xA;&#xA;CREATE DATABASE STM_SRC_test&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Unzip files"
+      DTS:ExecutableType="ProgettoMultimedia.TaskUnZip_2012.TaskUnZip, ProgettoMultimedia.TaskUnZip_2012, Version=1.4.0.0, Culture=neutral, PublicKeyToken=08d5a3e5c5e98dbc"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="TaskUnZip: http://www.codeplex.com/TaskUnZip/"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Unzip files"
+      DTS:DTSID="{E4C72555-F26B-46C2-8F23-B91B2F720F52}"
+      DTS:Description="TaskUnZip 2012"
+      DTS:CreationName="ProgettoMultimedia.TaskUnZip_2012.TaskUnZip, ProgettoMultimedia.TaskUnZip_2012, Version=1.4.0.0, Culture=neutral, PublicKeyToken=08d5a3e5c5e98dbc">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <InnerObject>
+          <Comment
+            Type="8"
+            Value="" />
+          <FileZip
+            Type="8"
+            Value="gtfs_stm.zip" />
+          <FolderDestination
+            Type="8"
+            Value="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm" />
+          <FolderSource
+            Type="8"
+            Value="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data" />
+          <OverwriteZipFile
+            Type="11"
+            Value="-1" />
+          <Password
+            Type="8"
+            Value="" />
+          <RecurseSubFolder
+            Type="11"
+            Value="-1" />
+          <RegExFileFilter
+            Type="8"
+            Value=".*" />
+          <TestArchive
+            Type="11"
+            Value="0" />
+          <TypeOperation
+            Type="3"
+            Value="2" />
+        </InnerObject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Drop and Create Database"
+      DTS:To="Package\Create Database Structure"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{31818D4C-C543-49BF-9816-480EEDD8E19A}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Create Database Structure"
+      DTS:To="Package\Unzip files"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{D8C26F44-6598-4566-9E19-4671539818A7}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,55"
+          Size="205,98"
+          Id="Package\Copy Data"
+          TopLeft="505.5,460.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Create Database Structure"
+          TopLeft="506,247" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Drop and Create Database"
+          TopLeft="498,166" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="603.25,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Dependency: TaskUnzip Must be installed in order to execute this package.&#xA;Task unzip can be found in the setup folder"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="424,56"
+          Id="feb28257-70b5-48a2-b8fd-5ef09fc98bbb"
+          TopLeft="806,260" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Unzip files"
+          TopLeft="543,344" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="606.5,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
