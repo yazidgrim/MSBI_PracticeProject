@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "STM_SRC_DataQuality", "STM_SRC_DataQuality.dtproj", "{161C5B7B-E9A8-42E1-B04E-48B83936C740}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{161C5B7B-E9A8-42E1-B04E-48B83936C740}.Development|Default.ActiveCfg = Development
+		{161C5B7B-E9A8-42E1-B04E-48B83936C740}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
