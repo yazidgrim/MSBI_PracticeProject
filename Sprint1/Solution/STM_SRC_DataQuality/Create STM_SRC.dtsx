@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="YAZID-PC"
   DTS:CreationDate="7/6/2014 2:34:25 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{A6C75EF0-0994-4C2D-BA61-F04530FF6944}"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{E6563AD3-0016-41D3-9519-B61F1524891A}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="Create STM_SRC"
@@ -22,6 +22,8 @@
       DTS:ObjectName="Agency"
       DTS:DTSID="{8BAE27B9-05E5-4502-A017-BC67964C5DB7}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\Agency.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -31,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\agency.txt">
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\Agency.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,6 +90,8 @@
       DTS:ObjectName="Calendar Dates"
       DTS:DTSID="{74A9F8CF-C79C-4232-9257-B38F198F8D27}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\Calendar_Dates.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -97,7 +101,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\calendar_dates.txt">
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\Calendar_Dates.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -135,6 +139,8 @@
       DTS:ObjectName="data quality report.xml"
       DTS:DTSID="{D28BE91D-4F81-4EE3-B8E2-7AF3C67E4FD2}"
       DTS:CreationName="FILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DataProfilingFolder] + "\\data quality report.xml"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:FileUsageType="1"
@@ -147,6 +153,8 @@
       DTS:ObjectName="Fare Attributes"
       DTS:DTSID="{B140EDAB-9FFA-4D27-87D3-99B59EB7C705}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\Fare_Attributes.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -156,7 +164,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\fare_attributes.txt">
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\Fare_Attributes.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -222,6 +230,8 @@
       DTS:ObjectName="Fare Rules"
       DTS:DTSID="{4713C95B-B1C5-4ACB-813E-54876A91AEDE}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\fare_rules.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -288,6 +298,8 @@
       DTS:ObjectName="Frequencies"
       DTS:DTSID="{3E2F6456-EC55-476E-B102-438D6638A03E}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\Frequencies.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -297,7 +309,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\frequencies.txt">
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\Frequencies.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -376,6 +388,8 @@
       DTS:ObjectName="Routes"
       DTS:DTSID="{7ECA0AB5-EC27-42CC-B6F3-8EDD883FBB37}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\routes.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -469,6 +483,8 @@
       DTS:ObjectName="Shapes"
       DTS:DTSID="{56B320E5-96E2-44E0-BCDD-935A4B1F886B}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\Shapes.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -478,7 +494,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\shapes.txt">
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Data\gtfs_stm\Shapes.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -526,6 +542,8 @@
       DTS:ObjectName="Stop Times"
       DTS:DTSID="{CBB83B69-558A-4BD9-BE90-518C4563D3A9}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\stop_times.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -592,6 +610,8 @@
       DTS:ObjectName="Stops"
       DTS:DTSID="{8C60156D-EB53-4F22-B96F-00B9DCEB3142}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\stops.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -676,6 +696,8 @@
       DTS:ObjectName="Trips"
       DTS:DTSID="{A34534B9-7733-4513-BB66-13FAF7628BB0}"
       DTS:CreationName="FLATFILE">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DestinationFolder] + "\\trips.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -5013,6 +5035,10 @@
       DTS:Description="TaskUnZip 2012"
       DTS:CreationName="ProgettoMultimedia.TaskUnZip_2012.TaskUnZip, ProgettoMultimedia.TaskUnZip_2012, Version=1.4.0.0, Culture=neutral, PublicKeyToken=08d5a3e5c5e98dbc">
       <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FolderDestination">@[$Project::DestinationFolder]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="FolderSource">@[$Project::ZipFileFolder]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <InnerObject>
           <Comment
