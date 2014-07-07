@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>STM_SRC_DataQuality</Name>
-    <LastWriteTime>2014-07-06T06:42:52.2021512Z</LastWriteTime>
+    <LastWriteTime>2014-07-07T02:34:47.1233572Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Create STM_SRC.dtsx</Name>
-      <LastWriteTime>2014-07-06T07:38:22.5228615Z</LastWriteTime>
+      <LastWriteTime>2014-07-07T02:34:44.885641Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
