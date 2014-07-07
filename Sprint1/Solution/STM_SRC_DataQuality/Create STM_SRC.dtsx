@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="YAZID-PC"
   DTS:CreationDate="7/6/2014 2:34:25 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{E4B0C0F5-FC27-47F1-A9A6-1ECB5A248EC4}"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{A6C75EF0-0994-4C2D-BA61-F04530FF6944}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="Create STM_SRC"
@@ -18,6 +18,7 @@
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Agency]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Agency"
       DTS:DTSID="{8BAE27B9-05E5-4502-A017-BC67964C5DB7}"
       DTS:CreationName="FLATFILE">
@@ -83,6 +84,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Calendar Dates]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Calendar Dates"
       DTS:DTSID="{74A9F8CF-C79C-4232-9257-B38F198F8D27}"
       DTS:CreationName="FLATFILE">
@@ -129,7 +131,19 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data quality report.xml]"
+      DTS:ObjectName="data quality report.xml"
+      DTS:DTSID="{D28BE91D-4F81-4EE3-B8E2-7AF3C67E4FD2}"
+      DTS:CreationName="FILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Yazid\Documents\GitHub\MSBI_PracticeProject\Sprint1\Solution\Data Quality Report\data quality report.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fare Attributes]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Fare Attributes"
       DTS:DTSID="{B140EDAB-9FFA-4D27-87D3-99B59EB7C705}"
       DTS:CreationName="FLATFILE">
@@ -204,6 +218,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fare Rules]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Fare Rules"
       DTS:DTSID="{4713C95B-B1C5-4ACB-813E-54876A91AEDE}"
       DTS:CreationName="FLATFILE">
@@ -269,6 +284,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Frequencies]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Frequencies"
       DTS:DTSID="{3E2F6456-EC55-476E-B102-438D6638A03E}"
       DTS:CreationName="FLATFILE">
@@ -334,8 +350,9 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-      DTS:ObjectName="LocalHost.STM_SRC_test"
+      DTS:refId="Package.ConnectionManagers[LocalHost.STM_SRC]"
+      DTS:DelayValidation="True"
+      DTS:ObjectName="LocalHost.STM_SRC"
       DTS:DTSID="{542BCD04-359A-4118-B841-81153D9D5D87}"
       DTS:CreationName="OLEDB">
       <DTS:ObjectData>
@@ -344,7 +361,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.STM_SRC Data Quality]"
+      DTS:ObjectName="LocalHost.STM_SRC Data Quality"
+      DTS:DTSID="{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=STM_SRC;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Routes]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Routes"
       DTS:DTSID="{7ECA0AB5-EC27-42CC-B6F3-8EDD883FBB37}"
       DTS:CreationName="FLATFILE">
@@ -437,6 +465,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Shapes]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Shapes"
       DTS:DTSID="{56B320E5-96E2-44E0-BCDD-935A4B1F886B}"
       DTS:CreationName="FLATFILE">
@@ -493,6 +522,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Stop Times]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Stop Times"
       DTS:DTSID="{CBB83B69-558A-4BD9-BE90-518C4563D3A9}"
       DTS:CreationName="FLATFILE">
@@ -558,6 +588,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Stops]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Stops"
       DTS:DTSID="{8C60156D-EB53-4F22-B96F-00B9DCEB3142}"
       DTS:CreationName="FLATFILE">
@@ -641,6 +672,7 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Trips]"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Trips"
       DTS:DTSID="{A34534B9-7733-4513-BB66-13FAF7628BB0}"
       DTS:CreationName="FLATFILE">
@@ -998,8 +1030,8 @@
                       refId="Package\Copy Data - No Dependencies\Agency\Agency Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -1345,8 +1377,8 @@
                       refId="Package\Copy Data - No Dependencies\Calendar Dates\Calendar Dates Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -1748,8 +1780,8 @@
                       refId="Package\Copy Data - No Dependencies\Fare Attributes\Fare Attributes Tables.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -2137,8 +2169,8 @@
                       refId="Package\Copy Data - No Dependencies\Frequencies\Frequencies Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -2498,8 +2530,8 @@
                       refId="Package\Copy Data - No Dependencies\Shapes\Shapes Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -2943,8 +2975,8 @@
                       refId="Package\Copy Data - No Dependencies\Stops\Stops Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -3100,6 +3132,7 @@
       DTS:refId="Package\Copy Data - With Dependencies"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
+      DTS:DelayValidation="True"
       DTS:ObjectName="Copy Data - With Dependencies"
       DTS:DTSID="{94ECA202-DEF9-4F35-AC13-82946EA6F688}"
       DTS:Description="Sequence Container"
@@ -3386,8 +3419,8 @@
                       refId="Package\Copy Data - With Dependencies\Fare Rules\Fare Rules Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -3873,8 +3906,8 @@
                       refId="Package\Copy Data - With Dependencies\Routes\Routes Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -4318,8 +4351,8 @@
                       refId="Package\Copy Data - With Dependencies\Stop Times\Stop Times Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -4721,8 +4754,8 @@
                       refId="Package\Copy Data - With Dependencies\Trips\Trips Table.Connections[OleDbConnection]"
                       name="OleDbConnection"
                       description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC_test]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC_test]" />
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_SRC]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_SRC]" />
                   </connections>
                   <inputs>
                     <input
@@ -4903,7 +4936,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C25FEC84-08B0-4F48-A515-04D054817D47}"
-          SQLTask:SqlStatementSource="USE master&#xA;go&#xA;IF EXISTS(select * from sys.databases where name='STM_SRC_test')&#xA;DROP DATABASE STM_SRC_test&#xA;&#xA;CREATE DATABASE STM_SRC_test&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE master&#xA;go&#xA;&#xA;IF EXISTS(select * from sys.databases where name='STM_SRC_test')&#xA;begin&#xA;ALTER DATABASE STM_SRC_test&#xA;SET SINGLE_USER&#xA;&#xA;DROP DATABASE STM_SRC_test&#xA;end&#xA;&#xA;CREATE DATABASE STM_SRC_test&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4911,7 +4944,6 @@
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.DataProfilingTask.DataProfilingTask, Microsoft.SqlServer.DataProfilingTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:ThreadHint="0"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2012; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:Disabled="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Generate Data Profiling Report"
       DTS:DTSID="{633C7A44-CD06-45CD-A14F-EA292147953C}"
@@ -4919,7 +4951,9 @@
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.DataProfilingTask.DataProfilingTask, Microsoft.SqlServer.DataProfilingTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
       <DTS:Variables />
       <DTS:ObjectData>
-        <DataProfilingTaskData>
+        <DataProfilingTaskData
+          Destination="data quality report.xml"
+          OverwriteDestination="True">
           <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
 <DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
   <ProfileVersion>1.0</ProfileVersion>
@@ -4927,7 +4961,39 @@
   <DataProfileInput>
     <ProfileMode>Exact</ProfileMode>
     <Timeout>0</Timeout>
-    <Requests />
+    <Requests>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}</DataSourceID>
+        <Table Schema="dbo" Table="shapes" />
+        <KeyColumns>
+          <Column IsWildCard="false" ColumnName="shape_id" />
+          <Column IsWildCard="false" ColumnName="shape_pt_sequence" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}</DataSourceID>
+        <Table Schema="dbo" Table="stops" />
+        <Column IsWildCard="false" ColumnName="stop_name" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}</DataSourceID>
+        <Table Schema="dbo" Table="routes" />
+        <Column IsWildCard="false" ColumnName="route_short_name" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}</DataSourceID>
+        <Table Schema="dbo" Table="trips" />
+        <Column IsWildCard="false" ColumnName="trip_id" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+    </Requests>
   </DataProfileInput>
   <DataProfileOutput>
     <Profiles />
