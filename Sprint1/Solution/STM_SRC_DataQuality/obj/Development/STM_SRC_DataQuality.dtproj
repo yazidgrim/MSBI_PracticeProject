@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">YAZID-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4x+MxpGHqken283ryx5CNAAAAAACAAAAAAAQZgAAAAEAACAAAAAM0UO1WEzRuQSJ7To0W8HHADdjsXiIlyWgR/v6/JL6PgAAAAAOgAAAAAIAACAAAACxdemL8Nf+Y2Pk9sBEtRdtqywzyxyjkg2pyKM66ac5yZAAAAAhoBZ7MpEcp+aXEe0XHd5vrZIQMywUsleuohD0k5R0XXP16uwSML/oxXlmYLivRM3oQz4vgg1y5NpkHEgjO/n/d8hXgZJ1QsX4AK/S8ZFBrj2WVvu38c2yXb5QM6tGigvLTfdAm919wZyJaJUdj6Z8CekYP1/EMfmQjTxg9cumZ+FtMFKioGjRkVkzjZ8DOwlAAAAArA0MlPWeJwyRup07vBh2Clrt3RL/IDtBVeU3F3NC1+Mrw0Pm1rcRUv6uXaD7l3VzgbvfXVIX/2ajD5xsM7zhlg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4x+MxpGHqken283ryx5CNAAAAAACAAAAAAAQZgAAAAEAACAAAAAe06Wji9x4IqQE7vMPboSzlTbZ5yrV43eMrVRZ46NX2AAAAAAOgAAAAAIAACAAAACdEme2MxwURFxM5T7xv67ou7/XLyA12kZlvsCdW6SY35AAAABakE6ALXHBVF6aTGTuVHIniJvX+tj6m7M6tMhebvKchFLjeI0JOIQ7gufsIfMJ5vkBR5vPb8ricX0tJNoM4iuRO9sVtrWmmF7t1f5LwfAbFN9CFV9chhiHA1S0ZVuKPz30w4vQKWvyw+0W7qh8bi5SpWSTgP4OD74j9igqQLETzKuJYD2wUAZegr7eh9fNBc1AAAAAvhUl8Oq4LBYmAyB3Yv/JHLw8ALLfp9RC5SRk7x+XcBRWDjwZ3rys4pPr/fXuXPkO2dW0HJ6IwecJKj3qPhOTpA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Create STM_SRC</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">56</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E6563AD3-0016-41D3-9519-B61F1524891A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ECE0C26F-C032-4DCF-9D70-E374E79C0159}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -986,7 +986,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=STM_SRC_test;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=STM_SRC;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1001,7 +1001,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">STM_SRC_test</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">STM_SRC</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1074,7 +1074,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=STM_SRC;Integrated Security=True;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=STM_SRC;Integrated Security=True;Application Name=SSIS-Create STM_SRC-{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}LocalHost.STM_SRC Data Quality;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

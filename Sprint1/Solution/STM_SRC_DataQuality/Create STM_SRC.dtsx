@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="YAZID-PC"
   DTS:CreationDate="7/6/2014 2:34:25 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{E6563AD3-0016-41D3-9519-B61F1524891A}"
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{52668517-1B10-4857-9009-C14311ED6D05}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="Create STM_SRC"
@@ -369,7 +369,7 @@
       DTS:CreationName="OLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;Initial Catalog=STM_SRC_test;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=STM_SRC;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -379,7 +379,7 @@
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;Initial Catalog=STM_SRC;Integrated Security=True;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=STM_SRC;Integrated Security=True;Application Name=SSIS-Create STM_SRC-{E59D1DF0-3C15-4A2F-823A-A60C111CE86F}LocalHost.STM_SRC Data Quality;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4941,7 +4941,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C25FEC84-08B0-4F48-A515-04D054817D47}"
-          SQLTask:SqlStatementSource="USE [STM_SRC_test]&#xA;GO&#xA;/****** Object:  Table [dbo].[agency]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[agency](&#xA;&#x9;[agency_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_name] [varchar](50) NULL,&#xA;&#x9;[agency_url] [varchar](50) NULL,&#xA;&#x9;[agency_timezone] [varchar](50) NULL,&#xA;&#x9;[agency_lang] [varchar](50) NULL,&#xA; CONSTRAINT [PK_agency] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[agency_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[calendar_dates]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[calendar_dates](&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[date] [varchar](50) NOT NULL,&#xA;&#x9;[exception_type] [varchar](50) NULL,&#xA; CONSTRAINT [PK_calendar_dates] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[date] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_attributes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_attributes](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[price] [varchar](50) NULL,&#xA;&#x9;[currency_type] [varchar](50) NULL,&#xA;&#x9;[payment_method] [varchar](50) NULL,&#xA;&#x9;[transfers] [varchar](50) NULL,&#xA;&#x9;[transfer_duration] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_attributes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_rules]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_rules](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[origin_id] [varchar](50) NULL,&#xA;&#x9;[destination_id] [varchar](50) NULL,&#xA;&#x9;[contains_id] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_rules] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC,&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[frequencies]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[frequencies](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[start_time] [varchar](50) NULL,&#xA;&#x9;[end_time] [varchar](50) NULL,&#xA;&#x9;[headway_secs] [varchar](50) NULL,&#xA; CONSTRAINT [PK_frequencies] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[routes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[routes](&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_id] [varchar](50) NULL,&#xA;&#x9;[route_short_name] [varchar](50) NULL,&#xA;&#x9;[route_long_name] [varchar](50) NULL,&#xA;&#x9;[route_type] [varchar](50) NULL,&#xA;&#x9;[route_url] [varchar](50) NULL,&#xA;&#x9;[route_color] [varchar](50) NULL,&#xA;&#x9;[route_text_color] [varchar](50) NULL,&#xA; CONSTRAINT [PK_routes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[shapes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[shapes](&#xA;&#x9;[shape_id] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lat] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lon] [varchar](50) NULL,&#xA;&#x9;[shape_pt_sequence] [varchar](50) NULL&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stop_times]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stop_times](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[arrival_time] [varchar](50) NULL,&#xA;&#x9;[departure_time] [varchar](50) NULL,&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_sequence] [varchar](50) NOT NULL,&#xA; CONSTRAINT [PK_stop_times] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC,&#xA;&#x9;[stop_id] ASC,&#xA;&#x9;[stop_sequence] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stops]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stops](&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_code] [varchar](50) NULL,&#xA;&#x9;[stop_name] [varchar](5000) NULL,&#xA;&#x9;[stop_lat] [varchar](50) NULL,&#xA;&#x9;[stop_lon] [varchar](50) NULL,&#xA;&#x9;[stop_url] [varchar](50) NULL,&#xA;&#x9;[wheelchair_boarding] [varchar](50) NULL,&#xA; CONSTRAINT [PK_stops] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[stop_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[trips]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[trips](&#xA;&#x9;[route_id] [varchar](50) NULL,&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[trip_headsign] [varchar](50) NULL,&#xA;&#x9;[wheelchair_accessible] [varchar](50) NULL,&#xA; CONSTRAINT [PK_trips] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_fare_attributes] FOREIGN KEY([fare_id])&#xA;REFERENCES [dbo].[fare_attributes] ([fare_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_fare_attributes]&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_routes]&#xA;GO&#xA;ALTER TABLE [dbo].[routes]  WITH CHECK ADD  CONSTRAINT [FK_routes_agency] FOREIGN KEY([agency_id])&#xA;REFERENCES [dbo].[agency] ([agency_id])&#xA;GO&#xA;ALTER TABLE [dbo].[routes] CHECK CONSTRAINT [FK_routes_agency]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_stops] FOREIGN KEY([stop_id])&#xA;REFERENCES [dbo].[stops] ([stop_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_stops]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_trips] FOREIGN KEY([trip_id])&#xA;REFERENCES [dbo].[trips] ([trip_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_trips]&#xA;GO&#xA;ALTER TABLE [dbo].[trips]  WITH CHECK ADD  CONSTRAINT [FK_trips_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[trips] CHECK CONSTRAINT [FK_trips_routes]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE [STM_SRC]&#xA;GO&#xA;/****** Object:  Table [dbo].[agency]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[agency](&#xA;&#x9;[agency_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_name] [varchar](50) NULL,&#xA;&#x9;[agency_url] [varchar](50) NULL,&#xA;&#x9;[agency_timezone] [varchar](50) NULL,&#xA;&#x9;[agency_lang] [varchar](50) NULL,&#xA; CONSTRAINT [PK_agency] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[agency_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[calendar_dates]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[calendar_dates](&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[date] [varchar](50) NOT NULL,&#xA;&#x9;[exception_type] [varchar](50) NULL,&#xA; CONSTRAINT [PK_calendar_dates] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[date] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_attributes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_attributes](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[price] [varchar](50) NULL,&#xA;&#x9;[currency_type] [varchar](50) NULL,&#xA;&#x9;[payment_method] [varchar](50) NULL,&#xA;&#x9;[transfers] [varchar](50) NULL,&#xA;&#x9;[transfer_duration] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_attributes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[fare_rules]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[fare_rules](&#xA;&#x9;[fare_id] [varchar](50) NOT NULL,&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[origin_id] [varchar](50) NULL,&#xA;&#x9;[destination_id] [varchar](50) NULL,&#xA;&#x9;[contains_id] [varchar](50) NULL,&#xA; CONSTRAINT [PK_fare_rules] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[fare_id] ASC,&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[frequencies]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[frequencies](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[start_time] [varchar](50) NULL,&#xA;&#x9;[end_time] [varchar](50) NULL,&#xA;&#x9;[headway_secs] [varchar](50) NULL,&#xA; CONSTRAINT [PK_frequencies] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[routes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[routes](&#xA;&#x9;[route_id] [varchar](50) NOT NULL,&#xA;&#x9;[agency_id] [varchar](50) NULL,&#xA;&#x9;[route_short_name] [varchar](50) NULL,&#xA;&#x9;[route_long_name] [varchar](50) NULL,&#xA;&#x9;[route_type] [varchar](50) NULL,&#xA;&#x9;[route_url] [varchar](50) NULL,&#xA;&#x9;[route_color] [varchar](50) NULL,&#xA;&#x9;[route_text_color] [varchar](50) NULL,&#xA; CONSTRAINT [PK_routes] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[route_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[shapes]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[shapes](&#xA;&#x9;[shape_id] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lat] [varchar](50) NULL,&#xA;&#x9;[shape_pt_lon] [varchar](50) NULL,&#xA;&#x9;[shape_pt_sequence] [varchar](50) NULL&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stop_times]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stop_times](&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[arrival_time] [varchar](50) NULL,&#xA;&#x9;[departure_time] [varchar](50) NULL,&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_sequence] [varchar](50) NOT NULL,&#xA; CONSTRAINT [PK_stop_times] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC,&#xA;&#x9;[stop_id] ASC,&#xA;&#x9;[stop_sequence] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[stops]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[stops](&#xA;&#x9;[stop_id] [varchar](50) NOT NULL,&#xA;&#x9;[stop_code] [varchar](50) NULL,&#xA;&#x9;[stop_name] [varchar](5000) NULL,&#xA;&#x9;[stop_lat] [varchar](50) NULL,&#xA;&#x9;[stop_lon] [varchar](50) NULL,&#xA;&#x9;[stop_url] [varchar](50) NULL,&#xA;&#x9;[wheelchair_boarding] [varchar](50) NULL,&#xA; CONSTRAINT [PK_stops] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[stop_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;/****** Object:  Table [dbo].[trips]    Script Date: 7/6/2014 2:57:01 AM ******/&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;CREATE TABLE [dbo].[trips](&#xA;&#x9;[route_id] [varchar](50) NULL,&#xA;&#x9;[service_id] [varchar](50) NULL,&#xA;&#x9;[trip_id] [varchar](50) NOT NULL,&#xA;&#x9;[trip_headsign] [varchar](50) NULL,&#xA;&#x9;[wheelchair_accessible] [varchar](50) NULL,&#xA; CONSTRAINT [PK_trips] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[trip_id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;SET ANSI_PADDING OFF&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_fare_attributes] FOREIGN KEY([fare_id])&#xA;REFERENCES [dbo].[fare_attributes] ([fare_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_fare_attributes]&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules]  WITH CHECK ADD  CONSTRAINT [FK_fare_rules_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[fare_rules] CHECK CONSTRAINT [FK_fare_rules_routes]&#xA;GO&#xA;ALTER TABLE [dbo].[routes]  WITH CHECK ADD  CONSTRAINT [FK_routes_agency] FOREIGN KEY([agency_id])&#xA;REFERENCES [dbo].[agency] ([agency_id])&#xA;GO&#xA;ALTER TABLE [dbo].[routes] CHECK CONSTRAINT [FK_routes_agency]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_stops] FOREIGN KEY([stop_id])&#xA;REFERENCES [dbo].[stops] ([stop_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_stops]&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times]  WITH CHECK ADD  CONSTRAINT [FK_stop_times_trips] FOREIGN KEY([trip_id])&#xA;REFERENCES [dbo].[trips] ([trip_id])&#xA;GO&#xA;ALTER TABLE [dbo].[stop_times] CHECK CONSTRAINT [FK_stop_times_trips]&#xA;GO&#xA;ALTER TABLE [dbo].[trips]  WITH CHECK ADD  CONSTRAINT [FK_trips_routes] FOREIGN KEY([route_id])&#xA;REFERENCES [dbo].[routes] ([route_id])&#xA;GO&#xA;ALTER TABLE [dbo].[trips] CHECK CONSTRAINT [FK_trips_routes]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4958,7 +4958,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C25FEC84-08B0-4F48-A515-04D054817D47}"
-          SQLTask:SqlStatementSource="USE master&#xA;go&#xA;&#xA;IF EXISTS(select * from sys.databases where name='STM_SRC_test')&#xA;begin&#xA;ALTER DATABASE STM_SRC_test&#xA;SET SINGLE_USER&#xA;&#xA;DROP DATABASE STM_SRC_test&#xA;end&#xA;&#xA;CREATE DATABASE STM_SRC_test&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE master&#xA;go&#xA;&#xA;IF EXISTS(select * from sys.databases where name='STM_SRC')&#xA;begin&#xA;ALTER DATABASE STM_SRC&#xA;SET SINGLE_USER&#xA;&#xA;DROP DATABASE STM_SRC&#xA;end&#xA;&#xA;CREATE DATABASE STM_SRC&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -5128,7 +5128,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="118,42"
           Id="Package\Copy Data - No Dependencies\Agency"
@@ -5245,10 +5245,21 @@
         <AnnotationLayout
           Text="Dependency: TaskUnzip Must be installed in order to execute this package.&#xA;Task unzip can be found in the setup folder"
           ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="424,56"
+          Size="424,65"
           Id="feb28257-70b5-48a2-b8fd-5ef09fc98bbb"
-          TopLeft="806,260" />
+          TopLeft="691,330">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF000000"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
         <NodeLayout
           Size="121,42"
           Id="Package\Copy Data - With Dependencies\Routes"
@@ -5406,6 +5417,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Hello Developer!&#xD;&#xA;Before you run this package, make sure you edit the project.params variables to point the correct folders in your machine&#xD;&#xA;Happy SSIS'ing"
+          ParentId="Package"
+          Size="739,93"
+          Id="4e877dbc-3fae-46ba-9e9b-48fdbe4f979d"
+          TopLeft="294,42">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FF000000"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5413,7 +5442,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Agency">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="112,42"
           Id="Package\Copy Data - No Dependencies\Agency\Agency"
@@ -5427,7 +5456,7 @@
           TopLeft="567.25,154">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,64"
               Start="0,0"
               End="0,56.5">
@@ -5464,7 +5493,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Calendar Dates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149,42"
           Id="Package\Copy Data - No Dependencies\Calendar Dates\Calendar Dates"
@@ -5478,7 +5507,7 @@
           TopLeft="535,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,115"
               Start="0,0"
               End="0,107.5">
@@ -5502,7 +5531,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Frequencies">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="134,42"
           Id="Package\Copy Data - No Dependencies\Frequencies\Frequencies"
@@ -5516,7 +5545,7 @@
           TopLeft="573.25,167">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,73"
               Start="0,0"
               End="0,65.5">
@@ -5566,7 +5595,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Shapes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="112,42"
           Id="Package\Copy Data - No Dependencies\Shapes\Shapes"
@@ -5580,7 +5609,7 @@
           TopLeft="574.25,163">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,109"
               Start="0,0"
               End="0,101.5">
@@ -5617,7 +5646,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Fare Attributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="148,42"
           Id="Package\Copy Data - No Dependencies\Fare Attributes\Fare Attributes"
@@ -5631,7 +5660,7 @@
           TopLeft="553.75,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,81"
               Start="0,0"
               End="0,73.5">
@@ -5668,7 +5697,7 @@
     design-time-name="Package\Copy Data - No Dependencies\Stops">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="104,42"
           Id="Package\Copy Data - No Dependencies\Stops\Stops"
@@ -5682,7 +5711,7 @@
           TopLeft="576.75,188">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,74"
               Start="0,0"
               End="0,66.5">
@@ -5719,7 +5748,7 @@
     design-time-name="Package\Copy Data - With Dependencies\Routes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="110,42"
           Id="Package\Copy Data - With Dependencies\Routes\Routes"
@@ -5733,7 +5762,7 @@
           TopLeft="525.75,206">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,85"
               Start="0,0"
               End="0,77.5">
@@ -5770,7 +5799,7 @@
     design-time-name="Package\Copy Data - With Dependencies\Fare Rules">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="127,42"
           Id="Package\Copy Data - With Dependencies\Fare Rules\Fare Rules"
@@ -5784,7 +5813,7 @@
           TopLeft="403.25,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,88"
               Start="0,0"
               End="0,80.5">
@@ -5821,7 +5850,7 @@
     design-time-name="Package\Copy Data - With Dependencies\Trips">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="101,42"
           Id="Package\Copy Data - With Dependencies\Trips\Trips"
@@ -5835,7 +5864,7 @@
           TopLeft="659.5,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,95"
               Start="0,0"
               End="0,87.5">
@@ -5872,7 +5901,7 @@
     design-time-name="Package\Copy Data - With Dependencies\Stop Times">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="131,42"
           Id="Package\Copy Data - With Dependencies\Stop Times\Stop Times"
@@ -5886,7 +5915,7 @@
           TopLeft="547.75,236">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,91"
               Start="0,0"
               End="0,83.5">
