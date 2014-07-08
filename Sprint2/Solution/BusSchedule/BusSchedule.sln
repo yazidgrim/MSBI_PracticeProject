@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "BusSchedule", "BusSchedule\BusSchedule.rptproj", "{773D0378-1023-4B82-AE36-E172491A67DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Debug|Default.ActiveCfg = Debug
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Debug|Default.Build.0 = DebugLocal
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Debug|Default.Deploy.0 = DebugLocal
+		{773D0378-1023-4B82-AE36-E172491A67DB}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{773D0378-1023-4B82-AE36-E172491A67DB}.DebugLocal|Default.Build.0 = DebugLocal
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Release|Default.ActiveCfg = Release
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Release|Default.Build.0 = Release
+		{773D0378-1023-4B82-AE36-E172491A67DB}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
