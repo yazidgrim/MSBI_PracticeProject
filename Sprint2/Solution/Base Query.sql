@@ -1,7 +1,26 @@
 use STM_SRC
 go
 --report Query
-select HH, [1], [2], [3], [4], [5], [6], [7], [8], [9], [10]
+select
+	CASE
+		WHEN CONVERT(int, HH) >= 5 AND CONVERT(int, HH) < 12 THEN 'Morning'
+		WHEN CONVERT(int, HH) >= 12 AND CONVERT(int, HH) < 19 THEN 'Day'
+		ELSE 'Evening'
+	END as DayPeriod,
+	CASE
+		WHEN CONVERT(int, HH) >= 24 THEN CONVERT(int, HH) - 24
+		ELSE CONVERT(int, HH)
+	END as HH, 
+	[1], 
+	[2], 
+	[3], 
+	[4], 
+	[5], 
+	[6], 
+	[7], 
+	[8], 
+	[9], 
+	[10]
 from
 (select
 	SUBSTRING(st.departure_time,1,2) as HH,
