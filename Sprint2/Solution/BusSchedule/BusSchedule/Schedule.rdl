@@ -547,6 +547,20 @@
     <DataSet Name="Schedule">
       <Query>
         <DataSourceName>STM_SRC</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ServiceID">
+            <Value>=Parameters!ServiceID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StopCode">
+            <Value>=Parameters!StopCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@RouteID">
+            <Value>=Parameters!RouteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Direction">
+            <Value>=Parameters!Direction.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select
 	CASE
 		WHEN CONVERT(int, HH) &gt;= 5 AND CONVERT(int, HH) &lt; 12 THEN 'Morning'
@@ -578,7 +592,7 @@ from
 	inner join trips t on t.trip_id = st.trip_id
 	inner join routes r on t.route_id = r.route_id
 where
-	s.stop_code = '53009' and r.route_id = '45' and t.trip_headsign = '45-N' and t.service_id = '14U_S') a
+	s.stop_code = @StopCode and r.route_id = @RouteID and t.trip_headsign = @RouteID + '-' + @Direction and t.service_id = @ServiceID) a
 PIVOT (MAX(MM) FOR RowNum in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10])) as pvt</CommandText>
       </Query>
       <Fields>
@@ -632,7 +646,155 @@ PIVOT (MAX(MM) FOR RowNum in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10])
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="ServiceID">
+      <Query>
+        <DataSourceName>STM_SRC</DataSourceName>
+        <CommandText>select
+	Service_id,
+	Date
+from
+	calendar_dates</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Service_id">
+          <DataField>Service_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Bus">
+      <Query>
+        <DataSourceName>STM_SRC</DataSourceName>
+        <CommandText>select route_id, route_short_name + ' - ' + route_long_name as bus_name from routes
+where route_type = '3'
+order by convert(int, route_ID)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="route_id">
+          <DataField>route_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bus_name">
+          <DataField>bus_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Direction">
+      <Query>
+        <DataSourceName>STM_SRC</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RouteID">
+            <Value>=Parameters!RouteID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct 
+	CASE SUBSTRING(trip_headsign, len(trip_headsign), 1)
+		WHEN 'N' THEN 'North'
+		WHEN 'S' THEN 'South'
+		WHEN 'E' THEN 'East'
+		WHEN 'O' THEN 'West'
+		ELSE 'Unknown'
+	END as direction,
+	SUBSTRING(trip_headsign, len(trip_headsign), 1) as direction_code
+ from trips where route_id = @RouteID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="direction">
+          <DataField>direction</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="direction_code">
+          <DataField>direction_code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Stops">
+      <Query>
+        <DataSourceName>STM_SRC</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RouteID">
+            <Value>=Parameters!RouteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Direction">
+            <Value>=Parameters!Direction.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct s.stop_name, s.stop_code, convert(int, stop_sequence)
+from
+	trips t
+	inner join stop_times st on st.trip_id = t.trip_id
+	inner join stops s on s.stop_id = st.stop_id
+where t.trip_headsign = @RouteID + '-' + @Direction
+order by convert(int, stop_sequence), stop_code</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="stop_name">
+          <DataField>stop_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="stop_code">
+          <DataField>stop_code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField />
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ServiceID">
+      <DataType>String</DataType>
+      <Prompt>Select a Date</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ServiceID</DataSetName>
+          <ValueField>Service_id</ValueField>
+          <LabelField>Date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="RouteID">
+      <DataType>String</DataType>
+      <Prompt>Select a Bus</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Bus</DataSetName>
+          <ValueField>route_id</ValueField>
+          <LabelField>bus_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Direction">
+      <DataType>String</DataType>
+      <Prompt>Select the Direction</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Direction</DataSetName>
+          <ValueField>direction_code</ValueField>
+          <LabelField>direction</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="StopCode">
+      <DataType>String</DataType>
+      <Prompt>Select the Bus Stop</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Stops</DataSetName>
+          <ValueField>stop_code</ValueField>
+          <LabelField>stop_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>6e6dc420-f570-4813-9645-a0a819895259</rd:ReportID>
 </Report>
