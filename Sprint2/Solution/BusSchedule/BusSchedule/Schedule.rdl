@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>19.605cm</Width>
+              <Width>27.76141cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.5cm</Height>
+              <Height>1.79724cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -21,37 +21,37 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.02674cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1.5cm</Width>
+                                <Width>2.48145cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -67,8 +67,9 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!HH.Value</Value>
+                                                <Value>=CStr(Fields!HH.Value) + "h"</Value>
                                                 <Style>
+                                                  <FontFamily>Verdana</FontFamily>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
@@ -84,6 +85,9 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <RightBorder>
+                                            <Width>2pt</Width>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -102,11 +106,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col1.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -116,7 +122,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -134,11 +140,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col2.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -148,7 +156,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -166,11 +174,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col3.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -180,7 +190,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -198,11 +208,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col4.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -212,7 +224,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -230,11 +242,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col5.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -244,7 +258,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -262,11 +276,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col6.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -276,7 +292,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -294,11 +310,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col7.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -308,7 +326,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -326,11 +344,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col8.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -340,7 +360,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -358,11 +378,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col9.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -372,7 +394,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -390,11 +412,13 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Col10.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Verdana</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Right</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
@@ -404,7 +428,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingLeft>4pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
@@ -439,10 +463,10 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>Schedule</DataSetName>
-                          <Top>1.66688cm</Top>
-                          <Left>0.27542cm</Left>
+                          <Top>0.8943cm</Top>
+                          <Left>0.5cm</Left>
                           <Height>0.5cm</Height>
-                          <Width>16.5cm</Width>
+                          <Width>26.8412cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -456,18 +480,21 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!DayPeriod.Value)</Value>
-                                  <Style />
+                                  <Value>=Right(First(Fields!DayPeriod.Value), Len(First(Fields!DayPeriod.Value)) - 1)</Value>
+                                  <Style>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>DayPeriod</rd:DefaultName>
-                          <Top>0.89049cm</Top>
-                          <Left>0.27542cm</Left>
+                          <Left>0.5cm</Left>
                           <Height>0.6cm</Height>
-                          <Width>2.5cm</Width>
+                          <Width>6.86562cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -506,20 +533,246 @@
                   <GroupExpression>=Fields!DayPeriod.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Left(Fields!DayPeriod.Value, 1)</Value>
+                </SortExpression>
+              </SortExpressions>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Schedule</DataSetName>
-        <Top>3.27766cm</Top>
-        <Left>1.27766cm</Left>
-        <Height>2.5cm</Height>
-        <Width>19.605cm</Width>
+        <Top>4.01772cm</Top>
+        <Height>1.79724cm</Height>
+        <Width>27.76141cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Image Name="STM_logo">
+        <Source>Embedded</Source>
+        <Value>headerlogo</Value>
+        <Top>0.5cm</Top>
+        <Left>0.5cm</Left>
+        <Height>1.27cm</Height>
+        <Width>2.75167cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Bus Schedule</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>24pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.8175cm</Top>
+        <Left>3.96558cm</Left>
+        <Height>0.9525cm</Height>
+        <Width>8.0875cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line1">
+        <Top>2cm</Top>
+        <Left>0.5cm</Left>
+        <Height>0cm</Height>
+        <Width>26.8412cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>buslocal</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>2.2987cm</Top>
+        <Left>0.5cm</Left>
+        <Height>0.5475cm</Height>
+        <Width>0.57396cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!RouteID.Value + " " + Parameters!Direction.Label</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.2987cm</Top>
+        <Left>1.20383cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.04784cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!StopCode.Label + " (" + Parameters!StopCode.Value + ")"</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.2987cm</Top>
+        <Left>3.52108cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.68167cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Schedule for:</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.97984cm</Top>
+        <Left>0.5cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.36844cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Date.Value + " (Valid from " + First(Fields!Date.Value, "Date") + " to " + Last(Fields!Date.Value, "Date") + ")"</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.97984cm</Top>
+        <Left>2.91783cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.68167cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line2">
+        <Top>3.84133cm</Top>
+        <Left>0.5cm</Left>
+        <Height>0cm</Height>
+        <Width>26.8412cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>5.27467in</Height>
     <Style />
@@ -533,7 +786,12 @@
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
-    <Style />
+    <Style>
+      <Border>
+        <Color>LightGrey</Color>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -548,14 +806,14 @@
       <Query>
         <DataSourceName>STM_SRC</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@ServiceID">
-            <Value>=Parameters!ServiceID.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@StopCode">
             <Value>=Parameters!StopCode.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@RouteID">
             <Value>=Parameters!RouteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Date">
+            <Value>=Parameters!Date.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@Direction">
             <Value>=Parameters!Direction.Value</Value>
@@ -563,9 +821,9 @@
         </QueryParameters>
         <CommandText>select
 	CASE
-		WHEN CONVERT(int, HH) &gt;= 5 AND CONVERT(int, HH) &lt; 12 THEN 'Morning'
-		WHEN CONVERT(int, HH) &gt;= 12 AND CONVERT(int, HH) &lt; 19 THEN 'Day'
-		ELSE 'Evening'
+		WHEN CONVERT(int, HH) &gt;= 5 AND CONVERT(int, HH) &lt; 12 THEN '1Morning (5 am to noon)'
+		WHEN CONVERT(int, HH) &gt;= 12 AND CONVERT(int, HH) &lt; 19 THEN '2Day (noon to 7 pm)'
+		ELSE '3Evening (7 pm to 5 am)'
 	END as DayPeriod,
 	CASE
 		WHEN CONVERT(int, HH) &gt;= 24 THEN CONVERT(int, HH) - 24
@@ -592,7 +850,7 @@ from
 	inner join trips t on t.trip_id = st.trip_id
 	inner join routes r on t.route_id = r.route_id
 where
-	s.stop_code = @StopCode and r.route_id = @RouteID and t.trip_headsign = @RouteID + '-' + @Direction and t.service_id = @ServiceID) a
+	s.stop_code = @StopCode and r.route_id = @RouteID and t.trip_headsign = @RouteID + '-' + @Direction and t.service_id = (select service_id from calendar_dates where date = convert(date, @Date))) a
 PIVOT (MAX(MM) FOR RowNum in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10])) as pvt</CommandText>
       </Query>
       <Fields>
@@ -646,12 +904,12 @@ PIVOT (MAX(MM) FOR RowNum in ([1], [2], [3], [4], [5], [6], [7], [8], [9], [10])
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="ServiceID">
+    <DataSet Name="Date">
       <Query>
         <DataSourceName>STM_SRC</DataSourceName>
         <CommandText>select
 	Service_id,
-	Date
+	Convert(Date, [Date]) as date
 from
 	calendar_dates</CommandText>
       </Query>
@@ -661,8 +919,8 @@ from
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -748,18 +1006,38 @@ order by convert(int, stop_sequence), stop_code</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DefaultServiceID">
+      <Query>
+        <DataSourceName>STM_SRC</DataSourceName>
+        <CommandText>select
+	Service_id,
+	Date
+from
+	Calendar_dates
+Where
+	convert(date, [date]) = convert (date, getDate())</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Service_id">
+          <DataField>Service_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="ServiceID">
-      <DataType>String</DataType>
+    <ReportParameter Name="Date">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Globals!ExecutionTime</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Select a Date</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>ServiceID</DataSetName>
-          <ValueField>Service_id</ValueField>
-          <LabelField>Date</LabelField>
-        </DataSetReference>
-      </ValidValues>
     </ReportParameter>
     <ReportParameter Name="RouteID">
       <DataType>String</DataType>
@@ -795,6 +1073,18 @@ order by convert(int, stop_sequence), stop_code</CommandText>
       </ValidValues>
     </ReportParameter>
   </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="headerlogo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="buslocal">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAA4UlEQVR42u3UoQrCUBTG8RUfwOCrLAoDg1GEdeseQSyKSRHsWlR8BHF1WMS2ZBBBWRrMMMUqx+/CWfScXdDmhV+48O1fxuYQ0Vf9gz8MmlObH4fwAFLcYYBHPgcxaAJZakjBHo9SiBUpb7tScAo7qDjKMRveTqTgGvpOyWO2sJCCWwgsggFspOABfIugD3speAbPIujBSQrmMLYIjuAmBYllcFVkxV4LxhABKSLeqkEXqlqQN26ZYAgrLcibUAsu4QUEifDZXYDYTPvb5DzsCG+3VQTNXQsmPG4LwTpvnub+BrsqonBz/IvSAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>6e6dc420-f570-4813-9645-a0a819895259</rd:ReportID>
 </Report>
