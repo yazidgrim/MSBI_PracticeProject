@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>27.76141cm</Width>
+              <Width>15.45743cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -21,37 +21,37 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.02674cm</Width>
+                                <Width>0.94639cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.48145cm</Width>
+                                <Width>1.4011cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -70,6 +70,7 @@
                                                 <Value>=CStr(Fields!HH.Value) + "h"</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
@@ -108,6 +109,7 @@
                                                 <Value>=Fields!Col1.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -142,6 +144,7 @@
                                                 <Value>=Fields!Col2.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -176,6 +179,7 @@
                                                 <Value>=Fields!Col3.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -210,6 +214,7 @@
                                                 <Value>=Fields!Col4.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -244,6 +249,7 @@
                                                 <Value>=Fields!Col5.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -278,6 +284,7 @@
                                                 <Value>=Fields!Col6.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -312,6 +319,7 @@
                                                 <Value>=Fields!Col7.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -346,6 +354,7 @@
                                                 <Value>=Fields!Col8.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -380,6 +389,7 @@
                                                 <Value>=Fields!Col9.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -414,6 +424,7 @@
                                                 <Value>=Fields!Col10.Value</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -466,7 +477,7 @@
                           <Top>0.8943cm</Top>
                           <Left>0.5cm</Left>
                           <Height>0.5cm</Height>
-                          <Width>26.8412cm</Width>
+                          <Width>14.95743cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -544,7 +555,7 @@
         <DataSetName>Schedule</DataSetName>
         <Top>4.01772cm</Top>
         <Height>1.79724cm</Height>
-        <Width>27.76141cm</Width>
+        <Width>15.45743cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -604,7 +615,7 @@
         <Top>2cm</Top>
         <Left>0.5cm</Left>
         <Height>0cm</Height>
-        <Width>26.8412cm</Width>
+        <Width>14.95743cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -681,7 +692,7 @@
         <Top>2.2987cm</Top>
         <Left>3.52108cm</Left>
         <Height>0.6cm</Height>
-        <Width>16.68167cm</Width>
+        <Width>8.532cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -703,7 +714,7 @@
                 <Value>Schedule for:</Value>
                 <Style>
                   <FontFamily>Verdana</FontFamily>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -714,7 +725,7 @@
         <Top>2.97984cm</Top>
         <Left>0.5cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.36844cm</Width>
+        <Width>2.24144cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -736,7 +747,7 @@
                 <Value>=Parameters!Date.Value + " (Valid from " + First(Fields!Date.Value, "Date") + " to " + Last(Fields!Date.Value, "Date") + ")"</Value>
                 <Style>
                   <FontFamily>Verdana</FontFamily>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -748,7 +759,7 @@
         <Top>2.97984cm</Top>
         <Left>2.91783cm</Left>
         <Height>0.6cm</Height>
-        <Width>16.68167cm</Width>
+        <Width>7.53761cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -764,7 +775,7 @@
         <Top>3.84133cm</Top>
         <Left>0.5cm</Left>
         <Height>0cm</Height>
-        <Width>26.8412cm</Width>
+        <Width>14.95743cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -777,7 +788,7 @@
     <Height>5.27467in</Height>
     <Style />
   </Body>
-  <Width>10.92969in</Width>
+  <Width>19.77099cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
