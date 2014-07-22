@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Load To DataWarehouse</Name>
-    <LastWriteTime>2014-07-22T14:59:29.5838883Z</LastWriteTime>
+    <LastWriteTime>2014-07-22T18:21:48.5086334Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Master.dtsx</Name>
-      <LastWriteTime>2014-07-21T20:35:11.5949678Z</LastWriteTime>
+      <LastWriteTime>2014-07-22T17:54:59.8827869Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadDimDate.dtsx</Name>
       <LastWriteTime>2014-07-22T15:46:46.5468883Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadDimFare.dtsx</Name>
+      <LastWriteTime>2014-07-22T18:55:16.7241145Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

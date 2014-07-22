@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 4:20:20 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{5DBA49F1-E5DC-4250-9D41-68F78AAFF83C}"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{CFBA4A9C-D0DB-4BBD-9F44-13FE80E73F1B}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="Master"
@@ -84,7 +84,7 @@
                 Value="file.zip" />
               <FolderDestination
                 Type="8"
-                Value="G:\\FilesToLoad" />
+                Value="G:\\FilesToLoad\\" />
               <FolderSource
                 Type="8"
                 Value="C:\\Users\\ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
@@ -129,6 +129,40 @@
       DTS:CreationName="STOCK:SEQUENCE">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimensions\DimDate"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDate"
+          DTS:DTSID="{E6286F3B-68A8-4ABC-9DCE-234F99A33F93}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadDimDate.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimensions\DimFare"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimFare"
+          DTS:DTSID="{6D3169F0-D3AA-4208-999E-8B4C35BE4949}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadDimFare.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimStops"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
@@ -186,16 +220,24 @@
           Size="125,42"
           Id="Package\Load Dimensions\DimStops"
           TopLeft="24,24" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load Dimensions\DimDate"
+          TopLeft="174,24" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Load Dimensions\DimFare"
+          TopLeft="317,24" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="522,122"
-          Size="522,165"
+          PanelSize="535,139"
+          Size="535,182"
           Id="Package\Load Dimensions"
           TopLeft="190,276" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="454.25,229">
+          TopLeft="457.5,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
