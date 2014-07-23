@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable
   DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ExecutableType="SSIS.Package.3"
@@ -1433,23 +1433,23 @@
                 <path
                   refId="Package\Clean\Clean.Paths[Derived Column Error Output1]"
                   name="Derived Column Error Output"
-                  startId="Package\Clean\Clean\Replace Empty with Null.Outputs[Derived Column Error Output]"
-                  endId="Package\Clean\Clean\Union All.Inputs[Union All Input 2]" />
-                <path
-                  refId="Package\Clean\Clean.Paths[Derived Column Error Output]"
-                  name="Derived Column Error Output"
                   startId="Package\Clean\Clean\Convert.Outputs[Derived Column Error Output]"
                   endId="Package\Clean\Clean\Union All.Inputs[Union All Input 1]" />
                 <path
-                  refId="Package\Clean\Clean.Paths[Derived Column Output1]"
-                  name="Derived Column Output"
-                  startId="Package\Clean\Clean\Replace Empty with Null.Outputs[Derived Column Output]"
-                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
+                  refId="Package\Clean\Clean.Paths[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  startId="Package\Clean\Clean\Replace Empty with Null.Outputs[Derived Column Error Output]"
+                  endId="Package\Clean\Clean\Union All.Inputs[Union All Input 2]" />
                 <path
-                  refId="Package\Clean\Clean.Paths[Derived Column Output]"
+                  refId="Package\Clean\Clean.Paths[Derived Column Output1]"
                   name="Derived Column Output"
                   startId="Package\Clean\Clean\Convert.Outputs[Derived Column Output]"
                   endId="Package\Clean\Clean\Replace Empty with Null.Inputs[Derived Column Input]" />
+                <path
+                  refId="Package\Clean\Clean.Paths[Derived Column Output]"
+                  name="Derived Column Output"
+                  startId="Package\Clean\Clean\Replace Empty with Null.Outputs[Derived Column Output]"
+                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Clean\Clean.Paths[OLE DB Source Output]"
                   name="OLE DB Source Output"
@@ -5881,15 +5881,15 @@ Where Prev.Hash IS NULL</property>
                   startId="Package\Load\Copy to Current\ExecutionGUID.Outputs[Derived Column Output]"
                   endId="Package\Load\Copy to Current\Distinct.Inputs[Sort Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
-                  name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Trip.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort.Inputs[Sort Input]" />
-                <path
                   refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
                   name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Route.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort 1.Inputs[Sort Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Trip.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output]"
                   name="Merge Join Output"
@@ -5898,18 +5898,18 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output2]"
                   name="Sort Output"
-                  startId="Package\Load\Copy to Current\Distinct.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Load\Copy to Current\Sort 1.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Left Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
                   name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 1.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Right Input]" />
+                  startId="Package\Load\Copy to Current\Distinct.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -6796,7 +6796,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Output]"
+          Id="Package\Clean\Clean.Paths[Derived Column Output1]"
           TopLeft="502,206">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6818,7 +6818,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Output1]"
+          Id="Package\Clean\Clean.Paths[Derived Column Output]"
           TopLeft="503,297">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6856,7 +6856,7 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Clean\Clean\Union All"
           TopLeft="708,227" />
         <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Error Output]"
+          Id="Package\Clean\Clean.Paths[Derived Column Error Output1]"
           TopLeft="559,185">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6892,7 +6892,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Error Output1]"
+          Id="Package\Clean\Clean.Paths[Derived Column Error Output]"
           TopLeft="600,276">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7546,7 +7546,7 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Load\Copy to Current\Merge Join"
           TopLeft="324,265" />
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
           TopLeft="268.5,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7580,7 +7580,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
           TopLeft="534,202">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7670,7 +7670,7 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Load\Copy to Current\Current"
           TopLeft="322,499" />
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output]"
           TopLeft="380.5,467">
           <EdgeLayout.Curve>
             <mssgle:Curve

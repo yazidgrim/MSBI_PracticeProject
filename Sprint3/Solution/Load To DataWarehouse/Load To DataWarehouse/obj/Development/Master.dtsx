@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 4:20:20 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{0790133B-DB15-4519-B2B5-60048B36833E}"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{156D4492-5062-4EA3-856F-8FBA1FD14381}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="Master"
@@ -130,6 +130,23 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Load Dimensions\DimBus"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimBus"
+          DTS:DTSID="{49C91053-33E6-4E15-AEF2-75CB067F1637}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadDimBusLine.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimDate"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -143,6 +160,23 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>LoadDimDate.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimensions\DimFare"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimFare"
+          DTS:DTSID="{6D3169F0-D3AA-4208-999E-8B4C35BE4949}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadDimFare.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -200,34 +234,54 @@
           Id="Package\For Each Zip File"
           TopLeft="355,94" />
         <NodeLayout
+          Size="121,42"
+          Id="Package\Load Dimensions\DimDate"
+          TopLeft="174,24" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Load Dimensions\DimFare"
+          TopLeft="317,24" />
+        <NodeLayout
           Size="125,42"
           Id="Package\Load Dimensions\DimStops"
           TopLeft="24,24" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Load Dimensions\DimDate"
-          TopLeft="174,24" />
+          Size="116,42"
+          Id="Package\Load Dimensions\DimBus"
+          TopLeft="463,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="522,139"
-          Size="522,182"
+          PanelSize="596,131"
+          Size="596,174"
           Id="Package\Load Dimensions"
-          TopLeft="190,276" />
+          TopLeft="190,284" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="454.25,229">
+          TopLeft="457.5,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="30.5,55"
               Start="0,0"
-              End="0,39.5">
+              End="30.5,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="26.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.5,27.5"
+                    Point2="30.5,27.5"
+                    Point3="30.5,31.5" />
+                  <mssgle:LineSegment
+                    End="30.5,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
