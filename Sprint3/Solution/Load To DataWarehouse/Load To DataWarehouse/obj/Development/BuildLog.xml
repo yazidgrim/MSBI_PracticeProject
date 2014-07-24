@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Load To DataWarehouse</Name>
-    <LastWriteTime>2014-07-23T15:35:26.0870035Z</LastWriteTime>
+    <LastWriteTime>2014-07-24T16:38:52.549418Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -29,6 +29,11 @@
     <ProjectBuildItemInfo>
       <Name>LoadDimBusLine.dtsx</Name>
       <LastWriteTime>2014-07-23T19:34:08.5454348Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadFactStopTimes.dtsx</Name>
+      <LastWriteTime>2014-07-24T20:27:22.420418Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
