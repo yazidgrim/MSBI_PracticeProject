@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 10:21:36 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="143"
-  DTS:VersionGUID="{1F4736CF-05E4-4A8F-BD68-93E373D4BD5F}"
+  DTS:VersionBuild="146"
+  DTS:VersionGUID="{3EE56793-1F16-4A1E-BA90-671DA1FA8C4C}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="LoadFactStopTimes"
@@ -1070,13 +1070,13 @@
                 <path
                   refId="Package\Clean\Clean.Paths[Derived Column Output1]"
                   name="Derived Column Output"
-                  startId="Package\Clean\Clean\Conversion.Outputs[Derived Column Output]"
-                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Clean\Clean\Prepare Time.Outputs[Derived Column Output]"
+                  endId="Package\Clean\Clean\Conversion.Inputs[Derived Column Input]" />
                 <path
                   refId="Package\Clean\Clean.Paths[Derived Column Output]"
                   name="Derived Column Output"
-                  startId="Package\Clean\Clean\Prepare Time.Outputs[Derived Column Output]"
-                  endId="Package\Clean\Clean\Conversion.Inputs[Derived Column Input]" />
+                  startId="Package\Clean\Clean\Conversion.Outputs[Derived Column Output]"
+                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Clean\Clean.Paths[OLE DB Source Output]"
                   name="OLE DB Source Output"
@@ -2216,7 +2216,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from ConformStopTime where stop_code is not null</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select top 10000000 * from ConformStopTime where stop_code is not null</property>
                     <property
                       name="SqlCommandVariable"
                       dataType="System.String"
@@ -2514,6 +2514,507 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Deliver\Deliver\Deduplicate"
+                  name="Deduplicate"
+                  componentClassID="{5B1A3FF5-D366-4D75-AD1F-F19A36FCBEDB}"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  version="1"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+                  <properties>
+                    <property
+                      name="EliminateDuplicates"
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values.">true</property>
+                    <property
+                      name="MaximumThreads"
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[ExecutionGUID]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[ExecutionGUID]"
+                          cachedName="ExecutionGUID"
+                          cachedDataType="guid">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[service_id]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[service_id]"
+                          cachedName="service_id"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[trip_id]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[trip_id]"
+                          cachedName="trip_id"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[stop_id]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[stop_id]"
+                          cachedName="stop_id"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[stop_code]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[stop_code]"
+                          cachedName="stop_code"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[trip_headsign]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[trip_headsign]"
+                          cachedName="trip_headsign"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[date]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[date]"
+                          cachedName="date"
+                          cachedDataType="dbTimeStamp">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[StopSequence]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[StopSequence]"
+                          cachedName="StopSequence"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DepartureTime]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[DepartureTime]"
+                          cachedName="DepartureTime"
+                          cachedDataType="dbTime2">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[BusLineCode]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[BusLineCode]"
+                          cachedName="BusLineCode"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[BusLineDirection]"
+                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[BusLineDirection]"
+                          cachedName="BusLineDirection"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimBusID]"
+                          lineageId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]"
+                          cachedName="DimBusID"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimDateID]"
+                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
+                          cachedName="DimDateID"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimStopID]"
+                          lineageId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]"
+                          cachedName="DimStopID"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimFareID]"
+                          lineageId="Package\Deliver\Deliver\Dim Fare.Outputs[Derived Column Output].Columns[DimFareID]"
+                          cachedName="DimFareID"
+                          cachedDataType="i4">
+                          <properties>
+                            <property
+                              name="NewComparisonFlags"
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data.">0</property>
+                            <property
+                              name="NewSortKeyPosition"
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column.">4</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output]"
+                      name="Sort Output"
+                      isSorted="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[ExecutionGUID]"
+                          name="ExecutionGUID"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[ExecutionGUID]"
+                          dataType="guid">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[ExecutionGUID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[service_id]"
+                          name="service_id"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[service_id]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[service_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[trip_id]"
+                          name="trip_id"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[trip_id]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[trip_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[stop_id]"
+                          name="stop_id"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[stop_id]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[stop_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[stop_code]"
+                          name="stop_code"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[stop_code]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[stop_code]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[trip_headsign]"
+                          name="trip_headsign"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[trip_headsign]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[trip_headsign]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[date]"
+                          name="date"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[date]"
+                          dataType="dbTimeStamp">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[date]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
+                          name="StopSequence"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
+                          dataType="i4">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[StopSequence]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
+                          name="DepartureTime"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
+                          dataType="dbTime2">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[DepartureTime]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[BusLineCode]"
+                          name="BusLineCode"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[BusLineCode]"
+                          dataType="i4">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[BusLineCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[BusLineDirection]"
+                          name="BusLineDirection"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[BusLineDirection]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[BusLineDirection]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimBusID]"
+                          name="DimBusID"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimBusID]"
+                          dataType="i4"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
+                          name="DimDateID"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
+                          dataType="i4"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
+                          name="DimStopID"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
+                          dataType="i4"
+                          sortKeyPosition="3">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
+                          name="DimFareID"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
+                          dataType="i4"
+                          sortKeyPosition="4">
+                          <properties>
+                            <property
+                              name="SortColumnId"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              containsID="true">#{Package\Deliver\Deliver\Dim Fare.Outputs[Derived Column Output].Columns[DimFareID]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Deliver\Deliver\Deliver"
                   name="Deliver"
                   componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
@@ -2587,40 +3088,44 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                       <inputColumns>
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[StopSequence]"
-                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[StopSequence]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[StopSequence]"
                           cachedName="StopSequence"
                           cachedDataType="i4" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DepartureTime]"
-                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[DepartureTime]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
                           cachedName="DepartureTime"
                           cachedDataType="dbTime2" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimBusID]"
-                          lineageId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimBusID]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimBusID]"
                           cachedName="DimBusID"
-                          cachedDataType="i4" />
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="1" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimDateID]"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimDateID]"
                           cachedName="DimDateID"
-                          cachedDataType="i4" />
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="2" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimStopID]"
-                          lineageId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimStopID]"
                           cachedName="DimStopID"
-                          cachedDataType="i4" />
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="3" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimFareID]"
-                          lineageId="Package\Deliver\Deliver\Dim Fare.Outputs[Derived Column Output].Columns[DimFareID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
                           externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimFareID]"
                           cachedName="DimFareID"
-                          cachedDataType="i4" />
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="4" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3177,8 +3682,8 @@ where [refTable].[StopCode] = ?</property>
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
                   name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output]"
-                  endId="Package\Deliver\Deliver\Dim Fare.Inputs[Derived Column Input]" />
+                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
+                  endId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output1]"
                   name="Lookup Match Output"
@@ -3187,18 +3692,23 @@ where [refTable].[StopCode] = ?</property>
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output]"
                   name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
-                  endId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]" />
+                  startId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output]"
+                  endId="Package\Deliver\Deliver\Dim Fare.Inputs[Derived Column Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
                   name="OLE DB Source Output"
                   startId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output]"
                   endId="Package\Deliver\Deliver\Bus Line.Inputs[Lookup Input]" />
                 <path
+                  refId="Package\Deliver\Deliver.Paths[Sort Output]"
+                  name="Sort Output"
+                  startId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output]"
+                  endId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input]" />
+                <path
                   refId="Package\Deliver\Deliver.Paths[Valid]"
                   name="Valid"
                   startId="Package\Deliver\Deliver\Removing NULLS.Outputs[Valid]"
-                  endId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input]" />
+                  endId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -6782,28 +7292,28 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
                   name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Trips.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 3.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
-                  name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
-                  name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Stops.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort 1.Inputs[Sort Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
                   name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Stop Times.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort.Inputs[Sort Input]" />
                 <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Trips.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort 3.Inputs[Sort Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]" />
+                <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output2]"
                   name="Merge Join Output"
-                  startId="Package\Load\Copy to Current\Merge Join 1.Outputs[Merge Join Output]"
-                  endId="Package\Load\Copy to Current\Sort 4.Inputs[Sort Input]" />
+                  startId="Package\Load\Copy to Current\Merge Join.Outputs[Merge Join Output]"
+                  endId="Package\Load\Copy to Current\Sort 2.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output1]"
                   name="Merge Join Output"
@@ -6812,38 +7322,38 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output]"
                   name="Merge Join Output"
-                  startId="Package\Load\Copy to Current\Merge Join.Outputs[Merge Join Output]"
-                  endId="Package\Load\Copy to Current\Sort 2.Inputs[Sort Input]" />
+                  startId="Package\Load\Copy to Current\Merge Join 1.Outputs[Merge Join Output]"
+                  endId="Package\Load\Copy to Current\Sort 4.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output3]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output4]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output5]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 2.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Left Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 3.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output4]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 1.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output5]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Left Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 2.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Left Input]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -7855,42 +8365,6 @@ Where Prev.Hash IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Clean\Clean.Paths[Derived Column Output1]"
-          TopLeft="474,249">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-117,74"
-              Start="0,0"
-              End="-117,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
-                  <mssgle:LineSegment
-                    End="-113,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-113,37"
-                    Point2="-117,37"
-                    Point3="-117,41" />
-                  <mssgle:LineSegment
-                    End="-117,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Output]"
           TopLeft="450.5,151">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7915,6 +8389,42 @@ Where Prev.Hash IS NULL</property>
                     Point3="23.5,32" />
                   <mssgle:LineSegment
                     End="23.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Clean\Clean.Paths[Derived Column Output]"
+          TopLeft="474,249">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117,74"
+              Start="0,0"
+              End="-117,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="-4,37" />
+                  <mssgle:LineSegment
+                    End="-113,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113,37"
+                    Point2="-117,37"
+                    Point3="-117,41" />
+                  <mssgle:LineSegment
+                    End="-117,66.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7960,13 +8470,21 @@ Where Prev.Hash IS NULL</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="106,42"
-          Id="Package\Conform\Conform\Clean"
-          TopLeft="436,85" />
+          Size="109,42"
+          Id="Package\Conform\Conform\Reject"
+          TopLeft="641,299" />
         <NodeLayout
           Size="128,42"
           Id="Package\Conform\Conform\Transform"
           TopLeft="425,184" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Conform\Conform\Conform"
+          TopLeft="429,298" />
+        <NodeLayout
+          Size="106,42"
+          Id="Package\Conform\Conform\Clean"
+          TopLeft="436,85" />
         <EdgeLayout
           Id="Package\Conform\Conform.Paths[OLE DB Source Output]"
           TopLeft="489,127">
@@ -7986,13 +8504,11 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Conform\Conform\Conform"
-          TopLeft="429,298" />
         <EdgeLayout
           Id="Package\Conform\Conform.Paths[Derived Column Output]"
           TopLeft="489,226">
@@ -8012,13 +8528,11 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="109,42"
-          Id="Package\Conform\Conform\Reject"
-          TopLeft="641,299" />
         <EdgeLayout
           Id="Package\Conform\Conform.Paths[Derived Column Error Output]"
           TopLeft="509,226">
@@ -8058,6 +8572,40 @@ Where Prev.Hash IS NULL</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conform\Conform\Reject">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conform\Conform\Conform">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conform\Conform\Clean">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Deliver\Deliver">
     <LayoutInfo>
@@ -8068,9 +8616,29 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Deliver\Deliver\Conform"
           TopLeft="380,64" />
         <NodeLayout
+          Size="161,42"
+          Id="Package\Deliver\Deliver\Removing NULLS"
+          TopLeft="818,529" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Deliver\Deliver\Deliver"
+          TopLeft="841,687" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Deliver\Deliver\Dim Stop"
+          TopLeft="736,346" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Deliver\Deliver\Dim Date"
+          TopLeft="579,254" />
+        <NodeLayout
           Size="120,42"
           Id="Package\Deliver\Deliver\Bus Line"
           TopLeft="481,155" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Deliver\Deliver\Dim Fare"
+          TopLeft="842,425" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
           TopLeft="440,106">
@@ -8105,12 +8673,8 @@ Where Prev.Hash IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Deliver\Deliver\Dim Date"
-          TopLeft="579,254" />
         <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Lookup Match Output]"
+          Id="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
           TopLeft="541,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8145,10 +8709,6 @@ Where Prev.Hash IS NULL</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Deliver\Deliver\Dim Stop"
-          TopLeft="736,346" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Lookup Match Output1]"
           TopLeft="641,296">
@@ -8185,16 +8745,8 @@ Where Prev.Hash IS NULL</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="112,42"
-          Id="Package\Deliver\Deliver\Deliver"
-          TopLeft="841,687" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Deliver\Deliver\Dim Fare"
-          TopLeft="842,425" />
         <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
+          Id="Package\Deliver\Deliver.Paths[Lookup Match Output]"
           TopLeft="797.5,388">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8229,10 +8781,6 @@ Where Prev.Hash IS NULL</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Deliver\Deliver\Removing NULLS"
-          TopLeft="818,529" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Derived Column Output]"
           TopLeft="901,467">
@@ -8255,33 +8803,149 @@ Where Prev.Hash IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Deliver\Deliver\Deduplicate"
+          TopLeft="828,611" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Valid]"
-          TopLeft="897.75,571">
+          TopLeft="897,571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,116"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,108.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,108.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-11.351171875,49.37548828125,22.70234375,9.7490234375"
+              BoundingBox="-11.351171875,11.37548828125,22.70234375,9.7490234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[Sort Output]"
+          TopLeft="896.25,653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Conform">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Deliver">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Dim Stop">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimStop]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Dim Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Bus Line">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBusLine]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load\Calculate Delta">
     <LayoutInfo>
@@ -8359,7 +9023,7 @@ Where Prev.Hash IS NULL</property>
     design-time-name="Package\Load\Copy to Current">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="99,42"
           Id="Package\Load\Copy to Current\Sort"
@@ -8418,108 +9082,6 @@ Where Prev.Hash IS NULL</property>
           TopLeft="695,397" />
         <EdgeLayout
           Id="Package\Load\Copy to Current.Paths[Sort Output5]"
-          TopLeft="327,349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86,50"
-              Start="0,0"
-              End="86,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6610169491525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6610169491525"
-                    Point2="0,29.6610169491525"
-                    Point3="4,29.6610169491525" />
-                  <mssgle:LineSegment
-                    End="82,29.6610169491525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82,29.6610169491525"
-                    Point2="86,29.6610169491525"
-                    Point3="86,33.6610169491525" />
-                  <mssgle:LineSegment
-                    End="86,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
-          TopLeft="742,517">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-116,38"
-              Start="0,0"
-              End="-116,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5423728813559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5423728813559"
-                    Point2="0,22.5423728813559"
-                    Point3="-4,22.5423728813559" />
-                  <mssgle:LineSegment
-                    End="-112,22.5423728813559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-112,22.5423728813559"
-                    Point2="-116,22.5423728813559"
-                    Point3="-116,26.5423728813559" />
-                  <mssgle:LineSegment
-                    End="-116,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
-          TopLeft="440,519">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="142,36"
-              Start="0,0"
-              End="142,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3559322033898" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3559322033898"
-                    Point2="0,21.3559322033898"
-                    Point3="4,21.3559322033898" />
-                  <mssgle:LineSegment
-                    End="138,21.3559322033898" />
-                  <mssgle:CubicBezierSegment
-                    Point1="138,21.3559322033898"
-                    Point2="142,21.3559322033898"
-                    Point3="142,25.3559322033898" />
-                  <mssgle:LineSegment
-                    End="142,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
           TopLeft="228.5,175">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8549,11 +9111,13 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
           TopLeft="426,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8583,11 +9147,13 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
           TopLeft="571,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8617,29 +9183,141 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Merge Join Output2]"
-          TopLeft="437.5,441">
+          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
+          TopLeft="327,349">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="86,50"
               Start="0,0"
-              End="0,28.5">
+              End="86,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,25.6610169491525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6610169491525"
+                    Point2="0,29.6610169491525"
+                    Point3="4,29.6610169491525" />
+                  <mssgle:LineSegment
+                    End="82,29.6610169491525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82,29.6610169491525"
+                    Point2="86,29.6610169491525"
+                    Point3="86,33.6610169491525" />
+                  <mssgle:LineSegment
+                    End="86,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
+          TopLeft="742,517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116,38"
+              Start="0,0"
+              End="-116,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5423728813559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5423728813559"
+                    Point2="0,22.5423728813559"
+                    Point3="-4,22.5423728813559" />
+                  <mssgle:LineSegment
+                    End="-112,22.5423728813559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112,22.5423728813559"
+                    Point2="-116,22.5423728813559"
+                    Point3="-116,26.5423728813559" />
+                  <mssgle:LineSegment
+                    End="-116,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Sort Output]"
+          TopLeft="440,519">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142,36"
+              Start="0,0"
+              End="142,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3559322033898" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3559322033898"
+                    Point2="0,21.3559322033898"
+                    Point3="4,21.3559322033898" />
+                  <mssgle:LineSegment
+                    End="138,21.3559322033898" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138,21.3559322033898"
+                    Point2="142,21.3559322033898"
+                    Point3="142,25.3559322033898" />
+                  <mssgle:LineSegment
+                    End="142,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Merge Join Output2]"
+          TopLeft="325.25,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8661,34 +9339,14 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load\Copy to Current.Paths[Merge Join Output]"
-          TopLeft="325.25,269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
-          TopLeft="745.25,439">
+          TopLeft="437.5,441">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8705,33 +9363,13 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
-          TopLeft="569.75,273">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
           TopLeft="229,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8749,11 +9387,13 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
           TopLeft="426,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8771,7 +9411,57 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+          TopLeft="745.25,439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+          TopLeft="569.75,273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8857,130 +9547,6 @@ Where Prev.Hash IS NULL</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load\Move Current to Previous\Previous">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conform\Conform\Clean">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conform\Conform\Conform">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conform\Conform\Reject">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Conform">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Bus Line">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimBusLine]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Dim Date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Dim Stop">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimStop]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Deliver">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
