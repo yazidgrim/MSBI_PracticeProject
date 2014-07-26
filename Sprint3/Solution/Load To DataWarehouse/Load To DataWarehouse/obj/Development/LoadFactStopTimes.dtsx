@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 10:21:36 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="146"
-  DTS:VersionGUID="{3EE56793-1F16-4A1E-BA90-671DA1FA8C4C}"
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{A2BCFC2E-3872-4CFA-8061-909A42C5B016}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="LoadFactStopTimes"
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="G:\\FilesToLoad\\calendar_dates.txt">
+          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\calendar_dates.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="G:\\FilesToLoad\\stops.txt">
+          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stops.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -186,7 +186,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="G:\\FilesToLoad\\stop_times.txt">
+          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stop_times.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -253,7 +253,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="G:\\FilesToLoad\\trips.txt">
+          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\trips.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -709,7 +709,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from LoadStopTime --where ExecutionGUID = ?
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from LoadStopTime where ExecutionGUID = ?
 
 --Comment the parameter section for debug</property>
                     <property
@@ -1070,13 +1070,13 @@
                 <path
                   refId="Package\Clean\Clean.Paths[Derived Column Output1]"
                   name="Derived Column Output"
-                  startId="Package\Clean\Clean\Conversion.Outputs[Derived Column Output]"
-                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Clean\Clean\Prepare Time.Outputs[Derived Column Output]"
+                  endId="Package\Clean\Clean\Conversion.Inputs[Derived Column Input]" />
                 <path
                   refId="Package\Clean\Clean.Paths[Derived Column Output]"
                   name="Derived Column Output"
-                  startId="Package\Clean\Clean\Prepare Time.Outputs[Derived Column Output]"
-                  endId="Package\Clean\Clean\Conversion.Inputs[Derived Column Input]" />
+                  startId="Package\Clean\Clean\Conversion.Outputs[Derived Column Output]"
+                  endId="Package\Clean\Clean\Clean.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Clean\Clean.Paths[OLE DB Source Output]"
                   name="OLE DB Source Output"
@@ -1137,7 +1137,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from CleanStopTime -- where ExecutionGUID = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from CleanStopTime where ExecutionGUID = ?</property>
                     <property
                       name="SqlCommandVariable"
                       dataType="System.String"
@@ -2216,7 +2216,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select top 10000000 * from ConformStopTime where stop_code is not null</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from ConformStopTime where ExecutionGUID = ?</property>
                     <property
                       name="SqlCommandVariable"
                       dataType="System.String"
@@ -3682,8 +3682,8 @@ where [refTable].[StopCode] = ?</property>
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
                   name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output]"
-                  endId="Package\Deliver\Deliver\Dim Fare.Inputs[Derived Column Input]" />
+                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
+                  endId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output1]"
                   name="Lookup Match Output"
@@ -3692,8 +3692,8 @@ where [refTable].[StopCode] = ?</property>
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output]"
                   name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
-                  endId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]" />
+                  startId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output]"
+                  endId="Package\Deliver\Deliver\Dim Fare.Inputs[Derived Column Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
                   name="OLE DB Source Output"
@@ -7292,28 +7292,28 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
                   name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Trips.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 3.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
-                  name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
-                  name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Stops.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort 1.Inputs[Sort Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
                   name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Stop Times.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort.Inputs[Sort Input]" />
                 <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Trips.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort 3.Inputs[Sort Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]" />
+                <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output2]"
                   name="Merge Join Output"
-                  startId="Package\Load\Copy to Current\Merge Join 1.Outputs[Merge Join Output]"
-                  endId="Package\Load\Copy to Current\Sort 4.Inputs[Sort Input]" />
+                  startId="Package\Load\Copy to Current\Merge Join.Outputs[Merge Join Output]"
+                  endId="Package\Load\Copy to Current\Sort 2.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output1]"
                   name="Merge Join Output"
@@ -7322,38 +7322,38 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output]"
                   name="Merge Join Output"
-                  startId="Package\Load\Copy to Current\Merge Join.Outputs[Merge Join Output]"
-                  endId="Package\Load\Copy to Current\Sort 2.Inputs[Sort Input]" />
+                  startId="Package\Load\Copy to Current\Merge Join 1.Outputs[Merge Join Output]"
+                  endId="Package\Load\Copy to Current\Sort 4.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output3]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output4]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output5]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 2.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Left Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 3.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output4]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 1.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
+                  refId="Package\Load\Copy to Current.Paths[Sort Output5]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Left Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 2.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Left Input]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -8310,7 +8310,7 @@ Where Prev.Hash IS NULL</property>
     design-time-name="Package\Clean\Clean">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="103,42"
           Id="Package\Clean\Clean\Load"
@@ -8358,49 +8358,11 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Clean\Clean.Paths[Derived Column Output]"
-          TopLeft="450.5,151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.5,56"
-              Start="0,0"
-              End="23.5,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="19.5,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.5,28"
-                    Point2="23.5,28"
-                    Point3="23.5,32" />
-                  <mssgle:LineSegment
-                    End="23.5,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Output1]"
           TopLeft="474,249">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8430,9 +8392,41 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Clean\Clean.Paths[Derived Column Output1]"
+          TopLeft="450.5,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.5,56"
+              Start="0,0"
+              End="23.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="19.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.5,28"
+                    Point2="23.5,28"
+                    Point3="23.5,32" />
+                  <mssgle:LineSegment
+                    End="23.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8504,9 +8498,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8528,9 +8520,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8616,6 +8606,14 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Deliver\Deliver\Conform"
           TopLeft="380,64" />
         <NodeLayout
+          Size="135,42"
+          Id="Package\Deliver\Deliver\Deduplicate"
+          TopLeft="828,611" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Deliver\Deliver\Dim Fare"
+          TopLeft="842,425" />
+        <NodeLayout
           Size="161,42"
           Id="Package\Deliver\Deliver\Removing NULLS"
           TopLeft="818,529" />
@@ -8628,17 +8626,59 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Deliver\Deliver\Dim Stop"
           TopLeft="736,346" />
         <NodeLayout
-          Size="124,42"
-          Id="Package\Deliver\Deliver\Dim Date"
-          TopLeft="579,254" />
-        <NodeLayout
           Size="120,42"
           Id="Package\Deliver\Deliver\Bus Line"
           TopLeft="481,155" />
         <NodeLayout
-          Size="123,42"
-          Id="Package\Deliver\Deliver\Dim Fare"
-          TopLeft="842,425" />
+          Size="124,42"
+          Id="Package\Deliver\Deliver\Dim Date"
+          TopLeft="579,254" />
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[Valid]"
+          TopLeft="897,571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.351171875,11.37548828125,22.70234375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[Sort Output]"
+          TopLeft="896.25,653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
           TopLeft="440,106">
@@ -8675,37 +8715,37 @@ Where Prev.Hash IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Lookup Match Output]"
-          TopLeft="541,197">
+          TopLeft="797.5,388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100,57"
+              EndConnector="106,37"
               Start="0,0"
-              End="100,49.5">
+              End="106,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="4,28.5" />
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
                   <mssgle:LineSegment
-                    End="96,28.5" />
+                    End="102,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="96,28.5"
-                    Point2="100,28.5"
-                    Point3="100,32.5" />
+                    Point1="102,18.5"
+                    Point2="106,18.5"
+                    Point3="106,22.5" />
                   <mssgle:LineSegment
-                    End="100,49.5" />
+                    End="106,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="1.80861328125,33.5,96.3827734375,11.609375"
+              BoundingBox="4.80861328125,23.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8747,37 +8787,37 @@ Where Prev.Hash IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
-          TopLeft="797.5,388">
+          TopLeft="541,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="106,37"
+              EndConnector="100,57"
               Start="0,0"
-              End="106,29.5">
+              End="100,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
                   <mssgle:LineSegment
-                    End="102,18.5" />
+                    End="96,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="102,18.5"
-                    Point2="106,18.5"
-                    Point3="106,22.5" />
+                    Point1="96,28.5"
+                    Point2="100,28.5"
+                    Point3="100,32.5" />
                   <mssgle:LineSegment
-                    End="106,29.5" />
+                    End="100,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="4.80861328125,23.5,96.3827734375,11.609375"
+              BoundingBox="1.80861328125,33.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8795,56 +8835,6 @@ Where Prev.Hash IS NULL</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,54.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="135,42"
-          Id="Package\Deliver\Deliver\Deduplicate"
-          TopLeft="828,611" />
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Valid]"
-          TopLeft="897,571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.351171875,11.37548828125,22.70234375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Sort Output]"
-          TopLeft="896.25,653">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8901,7 +8891,7 @@ Where Prev.Hash IS NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Dim Date">
+    design-time-name="Package\Deliver\Deliver\Bus Line">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8911,7 +8901,7 @@ Where Prev.Hash IS NULL</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimDate]</Value>
+          type="q3:string">[dbo].[DimBusLine]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8924,7 +8914,7 @@ Where Prev.Hash IS NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Bus Line">
+    design-time-name="Package\Deliver\Deliver\Dim Date">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8934,7 +8924,7 @@ Where Prev.Hash IS NULL</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimBusLine]</Value>
+          type="q3:string">[dbo].[DimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -9081,7 +9071,7 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Load\Copy to Current\Dates"
           TopLeft="695,397" />
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output5]"
           TopLeft="228.5,175">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9117,7 +9107,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
           TopLeft="426,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9153,7 +9143,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
           TopLeft="571,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9189,7 +9179,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output5]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
           TopLeft="327,349">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9225,7 +9215,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
           TopLeft="742,517">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9261,7 +9251,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output]"
           TopLeft="440,519">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9297,7 +9287,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Merge Join Output]"
+          Id="Package\Load\Copy to Current.Paths[Merge Join Output2]"
           TopLeft="325.25,269">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9345,7 +9335,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Merge Join Output2]"
+          Id="Package\Load\Copy to Current.Paths[Merge Join Output]"
           TopLeft="437.5,441">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9369,7 +9359,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
           TopLeft="229,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9393,7 +9383,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
           TopLeft="426,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9417,7 +9407,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
           TopLeft="745.25,439">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9441,7 +9431,7 @@ Where Prev.Hash IS NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output]"
           TopLeft="569.75,273">
           <EdgeLayout.Curve>
             <mssgle:Curve

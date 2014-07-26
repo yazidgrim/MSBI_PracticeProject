@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\\Users\\ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\</SSIS:Property>
+        SSIS:Name="Value">C:\\Users\\Yazid\Documents\\GitHub\\MSBI_PracticeProject\\Data\\</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">G:\\FilesToLoad\\</SSIS:Property>
+        SSIS:Name="Value">C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
