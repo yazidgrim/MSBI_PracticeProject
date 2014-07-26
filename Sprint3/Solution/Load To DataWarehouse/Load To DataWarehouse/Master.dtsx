@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 4:20:20 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{156D4492-5062-4EA3-856F-8FBA1FD14381}"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{F9811C2F-C942-4C5D-BEC1-FBB590636D21}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="Master"
@@ -44,7 +44,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\\Users\\ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
+              Folder="C:\\Users\\Yazid\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
             <FEFEProperty
               FileSpec="*.zip" />
             <FEFEProperty
@@ -84,10 +84,10 @@
                 Value="file.zip" />
               <FolderDestination
                 Type="8"
-                Value="G:\\FilesToLoad\\" />
+                Value="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\" />
               <FolderSource
                 Type="8"
-                Value="C:\\Users\\ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
+                Value="C:\\Users\\Yazid\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
               <OverwriteZipFile
                 Type="11"
                 Value="-1" />
@@ -199,6 +199,35 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Facts"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Facts"
+      DTS:DTSID="{907C2161-1A89-41D1-B917-E600E92E5E8F}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Facts\FactStopTime"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactStopTime"
+          DTS:DTSID="{DBBF421E-9BF4-4002-9D90-0AD688F887D8}"
+          DTS:Description="Execute Package Task"
+          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadFactStopTimes.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -208,6 +237,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:DTSID="{EBC7F894-D055-4F6C-9F15-276543F72288}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Load Dimensions"
+      DTS:To="Package\Load Facts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{B602A82D-56C3-4200-AC2F-3E3CF2075372}"
       DTS:CreationName="" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -221,7 +258,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="193,42"
           Id="Package\For Each Zip File\Unzip to Working Folder"
@@ -234,6 +271,10 @@
           Id="Package\For Each Zip File"
           TopLeft="355,94" />
         <NodeLayout
+          Size="116,42"
+          Id="Package\Load Dimensions\DimBus"
+          TopLeft="463,27" />
+        <NodeLayout
           Size="121,42"
           Id="Package\Load Dimensions\DimDate"
           TopLeft="174,24" />
@@ -245,10 +286,6 @@
           Size="125,42"
           Id="Package\Load Dimensions\DimStops"
           TopLeft="24,24" />
-        <NodeLayout
-          Size="116,42"
-          Id="Package\Load Dimensions\DimBus"
-          TopLeft="463,27" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -282,6 +319,51 @@
                     Point3="30.5,31.5" />
                   <mssgle:LineSegment
                     End="30.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Load Facts\FactStopTime"
+          TopLeft="45,19" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,117"
+          Size="250,160"
+          Id="Package\Load Facts"
+          TopLeft="324,517" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="488,458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39,59"
+              Start="0,0"
+              End="-39,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-35,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35,29.5"
+                    Point2="-39,29.5"
+                    Point3="-39,33.5" />
+                  <mssgle:LineSegment
+                    End="-39,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
