@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="MOLYGRIM2"
   DTS:CreationDate="7/21/2014 10:21:36 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="148"
-  DTS:VersionGUID="{A2BCFC2E-3872-4CFA-8061-909A42C5B016}"
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{B2EF071A-810E-470C-9244-CA296A4EFD6D}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
   DTS:ObjectName="LoadFactStopTimes"
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\calendar_dates.txt">
+          DTS:ConnectionString="C:\\Users\\Ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\calendar_dates.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stops.txt">
+          DTS:ConnectionString="C:\\Users\\Ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stops.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -186,7 +186,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stop_times.txt">
+          DTS:ConnectionString="C:\\Users\\Ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\stop_times.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -253,7 +253,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\trips.txt">
+          DTS:ConnectionString="C:\\Users\\Ygrim\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\trips.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -709,7 +709,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from LoadStopTime where ExecutionGUID = ?
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from LoadStopTime -- where ExecutionGUID = ?
 
 --Comment the parameter section for debug</property>
                     <property
@@ -1137,7 +1137,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from CleanStopTime where ExecutionGUID = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from CleanStopTime -- where ExecutionGUID = ?</property>
                     <property
                       name="SqlCommandVariable"
                       dataType="System.String"
@@ -2216,7 +2216,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                       name="SqlCommand"
                       dataType="System.String"
                       description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from ConformStopTime where ExecutionGUID = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from ConformStopTime -- where ExecutionGUID = ?</property>
                     <property
                       name="SqlCommandVariable"
                       dataType="System.String"
@@ -2567,7 +2567,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                             <property
                               name="NewSortKeyPosition"
                               dataType="System.Int32"
-                              description="Specifies the sort order of the column.">0</property>
+                              description="Specifies the sort order of the column.">4</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -2671,7 +2671,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                             <property
                               name="NewSortKeyPosition"
                               dataType="System.Int32"
-                              description="Specifies the sort order of the column.">0</property>
+                              description="Specifies the sort order of the column.">6</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -2687,7 +2687,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                             <property
                               name="NewSortKeyPosition"
                               dataType="System.Int32"
-                              description="Specifies the sort order of the column.">0</property>
+                              description="Specifies the sort order of the column.">5</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -2741,22 +2741,6 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimDateID]"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
-                          cachedName="DimDateID"
-                          cachedDataType="i4">
-                          <properties>
-                            <property
-                              name="NewComparisonFlags"
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data.">0</property>
-                            <property
-                              name="NewSortKeyPosition"
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column.">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Deliver\Deliver\Deduplicate.Inputs[Sort Input].Columns[DimStopID]"
                           lineageId="Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]"
                           cachedName="DimStopID"
@@ -2769,7 +2753,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                             <property
                               name="NewSortKeyPosition"
                               dataType="System.Int32"
-                              description="Specifies the sort order of the column.">3</property>
+                              description="Specifies the sort order of the column.">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -2785,7 +2769,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                             <property
                               name="NewSortKeyPosition"
                               dataType="System.Int32"
-                              description="Specifies the sort order of the column.">4</property>
+                              description="Specifies the sort order of the column.">3</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2817,7 +2801,8 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[service_id]"
                           length="50"
                           dataType="str"
-                          codePage="1252">
+                          codePage="1252"
+                          sortKeyPosition="4">
                           <properties>
                             <property
                               name="SortColumnId"
@@ -2903,7 +2888,8 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
                           name="StopSequence"
                           lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
-                          dataType="i4">
+                          dataType="i4"
+                          sortKeyPosition="6">
                           <properties>
                             <property
                               name="SortColumnId"
@@ -2916,7 +2902,8 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
                           name="DepartureTime"
                           lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
-                          dataType="dbTime2">
+                          dataType="dbTime2"
+                          sortKeyPosition="5">
                           <properties>
                             <property
                               name="SortColumnId"
@@ -2968,25 +2955,11 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
-                          name="DimDateID"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
-                          dataType="i4"
-                          sortKeyPosition="2">
-                          <properties>
-                            <property
-                              name="SortColumnId"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              containsID="true">#{Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
                           name="DimStopID"
                           lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
                           dataType="i4"
-                          sortKeyPosition="3">
+                          sortKeyPosition="2">
                           <properties>
                             <property
                               name="SortColumnId"
@@ -3000,7 +2973,7 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                           name="DimFareID"
                           lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
                           dataType="i4"
-                          sortKeyPosition="4">
+                          sortKeyPosition="3">
                           <properties>
                             <property
                               name="SortColumnId"
@@ -3009,332 +2982,6 @@ where [refTable].[BusLineCode] = ? and [refTable].[BusLineDirection] = ?</proper
                               containsID="true">#{Package\Deliver\Deliver\Dim Fare.Outputs[Derived Column Output].Columns[DimFareID]}</property>
                           </properties>
                         </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Deliver\Deliver\Deliver"
-                  name="Deliver"
-                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
-                  description="OLE DB Destination"
-                  usesDispositions="true"
-                  version="4"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
-                  <properties>
-                    <property
-                      name="CommandTimeout"
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
-                    <property
-                      name="OpenRowset"
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset.">[dbo].[FactStopTimes]</property>
-                    <property
-                      name="OpenRowsetVariable"
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
-                    <property
-                      name="SqlCommand"
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      name="DefaultCodePage"
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                    <property
-                      name="AlwaysUseDefaultCodePage"
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
-                    <property
-                      name="AccessMode"
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      name="FastLoadKeepIdentity"
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
-                    <property
-                      name="FastLoadKeepNulls"
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
-                    <property
-                      name="FastLoadOptions"
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      name="FastLoadMaxInsertCommitSize"
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Deliver\Deliver\Deliver.Connections[OleDbConnection]"
-                      name="OleDbConnection"
-                      description="The OLE DB runtime connection used to access the database."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_DW]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_DW]" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input]"
-                      name="OLE DB Destination Input"
-                      hasSideEffects="true"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[StopSequence]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[StopSequence]"
-                          cachedName="StopSequence"
-                          cachedDataType="i4" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DepartureTime]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
-                          cachedName="DepartureTime"
-                          cachedDataType="dbTime2" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimBusID]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimBusID]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimBusID]"
-                          cachedName="DimBusID"
-                          cachedDataType="i4"
-                          cachedSortKeyPosition="1" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimDateID]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimDateID]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimDateID]"
-                          cachedName="DimDateID"
-                          cachedDataType="i4"
-                          cachedSortKeyPosition="2" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimStopID]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimStopID]"
-                          cachedName="DimStopID"
-                          cachedDataType="i4"
-                          cachedSortKeyPosition="3" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].Columns[DimFareID]"
-                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
-                          externalMetadataColumnId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimFareID]"
-                          cachedName="DimFareID"
-                          cachedDataType="i4"
-                          cachedSortKeyPosition="4" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimStopID]"
-                          name="DimStopID"
-                          dataType="i4" />
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimBusID]"
-                          name="DimBusID"
-                          dataType="i4" />
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimDateID]"
-                          name="DimDateID"
-                          dataType="i4" />
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DimFareID]"
-                          name="DimFareID"
-                          dataType="i4" />
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[StopSequence]"
-                          name="StopSequence"
-                          dataType="i4" />
-                        <externalMetadataColumn
-                          refId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
-                          name="DepartureTime"
-                          dataType="dbTime2"
-                          scale="7" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Deliver\Deliver\Deliver.Outputs[OLE DB Destination Error Output]"
-                      name="OLE DB Destination Error Output"
-                      exclusionGroup="1"
-                      synchronousInputId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input]"
-                      isErrorOut="true">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Deliver\Deliver\Deliver.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Deliver\Deliver\Deliver.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Deliver\Deliver\Deliver.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Deliver\Deliver\Dim Date"
-                  name="Dim Date"
-                  componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  usesDispositions="true"
-                  version="6"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6">
-                  <properties>
-                    <property
-                      name="SqlCommand"
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-                      expressionType="Notify">select * from [dbo].[DimDate]</property>
-                    <property
-                      name="SqlCommandParam"
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-                      expressionType="Notify">select * from (select * from [dbo].[DimDate]) [refTable]
-where [refTable].[Date] = ?</property>
-                    <property
-                      name="ConnectionType"
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      name="CacheType"
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      typeConverter="CacheType">0</property>
-                    <property
-                      name="NoMatchBehavior"
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      typeConverter="LookupNoMatchBehavior">0</property>
-                    <property
-                      name="NoMatchCachePercentage"
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.">0</property>
-                    <property
-                      name="MaxMemoryUsage"
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform.">25</property>
-                    <property
-                      name="MaxMemoryUsage64"
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform.">25</property>
-                    <property
-                      name="ReferenceMetadataXml"
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format.">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DimDateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ServiceID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="IsWeekDay" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsWeekEnd" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsHoliday" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      name="ParameterMap"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      containsID="true">#{Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[date]};</property>
-                    <property
-                      name="DefaultCodePage"
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                    <property
-                      name="TreatDuplicateKeysAsError"
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Deliver\Deliver\Dim Date.Connections[OleDbConnection]"
-                      name="OleDbConnection"
-                      description="Connection manager used to access lookup data."
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_DW]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_DW]" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input].Columns[date]"
-                          lineageId="Package\Deliver\Deliver\Conform.Outputs[OLE DB Source Output].Columns[date]"
-                          cachedName="date"
-                          cachedDataType="dbTimeStamp">
-                          <properties>
-                            <property
-                              name="JoinToReferenceColumn"
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins.">Date</property>
-                            <property
-                              name="CopyFromReferenceColumn"
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied." />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output]"
-                      name="Lookup Match Output"
-                      exclusionGroup="1"
-                      synchronousInputId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]"
-                      errorOrTruncationOperation="Lookup"
-                      errorRowDisposition="IgnoreFailure">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
-                          name="DimDateID"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          truncationRowDisposition="IgnoreFailure">
-                          <properties>
-                            <property
-                              name="CopyFromReferenceColumn"
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied.">DimDateID</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup No Match Output]"
-                      name="Lookup No Match Output"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      synchronousInputId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Error Output]"
-                      name="Lookup Error Output"
-                      exclusionGroup="1"
-                      synchronousInputId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]"
-                      isErrorOut="true">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3376,13 +3023,13 @@ where [refTable].[Date] = ?</property>
                               name="Expression"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              containsID="true">-1</property>
+                              containsID="true">1</property>
                             <property
                               name="FriendlyExpression"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               containsID="true"
-                              expressionType="Notify">-1</property>
+                              expressionType="Notify">1</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3574,6 +3221,180 @@ where [refTable].[StopCode] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Deliver\Deliver\Fact Stop Times"
+                  name="Fact Stop Times"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  description="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  <properties>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                    <property
+                      name="OpenRowset"
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset.">[dbo].[FactStopTimes]</property>
+                    <property
+                      name="OpenRowsetVariable"
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      name="DefaultCodePage"
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                    <property
+                      name="AlwaysUseDefaultCodePage"
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                    <property
+                      name="AccessMode"
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      name="FastLoadKeepIdentity"
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadKeepNulls"
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadOptions"
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      name="FastLoadMaxInsertCommitSize"
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Deliver\Deliver\Fact Stop Times.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="The OLE DB runtime connection used to access the database."
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.STM_DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.STM_DW]" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input]"
+                      name="OLE DB Destination Input"
+                      hasSideEffects="true"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[StopSequence]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[StopSequence]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[StopSequence]"
+                          cachedName="StopSequence"
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="6" />
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[DepartureTime]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DepartureTime]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
+                          cachedName="DepartureTime"
+                          cachedDataType="dbTime2"
+                          cachedSortKeyPosition="5" />
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[DimBusID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimBusID]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimBusID]"
+                          cachedName="DimBusID"
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="1" />
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[DimStopID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimStopID]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimStopID]"
+                          cachedName="DimStopID"
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="2" />
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[DimFareID]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[DimFareID]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimFareID]"
+                          cachedName="DimFareID"
+                          cachedDataType="i4"
+                          cachedSortKeyPosition="3" />
+                        <inputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].Columns[service_id]"
+                          lineageId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output].Columns[service_id]"
+                          externalMetadataColumnId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimServiceID]"
+                          cachedName="service_id"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252"
+                          cachedSortKeyPosition="4" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimStopID]"
+                          name="DimStopID"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimBusID]"
+                          name="DimBusID"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimServiceID]"
+                          name="DimServiceID"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DimFareID]"
+                          name="DimFareID"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[StopSequence]"
+                          name="StopSequence"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
+                          name="DepartureTime"
+                          dataType="dbTime2"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Deliver\Deliver\Fact Stop Times.Outputs[OLE DB Destination Error Output]"
+                      name="OLE DB Destination Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Deliver\Deliver\Fact Stop Times.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Deliver\Deliver\Fact Stop Times.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Deliver\Deliver\Fact Stop Times.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Deliver\Deliver\Removing NULLS"
                   name="Removing NULLS"
                   componentClassID="{7F88F654-4E20-4D14-84F4-AF9C925D3087}"
@@ -3590,11 +3411,6 @@ where [refTable].[StopCode] = ?</property>
                           refId="Package\Deliver\Deliver\Removing NULLS.Inputs[Conditional Split Input].Columns[DimBusID]"
                           lineageId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]"
                           cachedName="DimBusID"
-                          cachedDataType="i4" />
-                        <inputColumn
-                          refId="Package\Deliver\Deliver\Removing NULLS.Inputs[Conditional Split Input].Columns[DimDateID]"
-                          lineageId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]"
-                          cachedName="DimDateID"
                           cachedDataType="i4" />
                         <inputColumn
                           refId="Package\Deliver\Deliver\Removing NULLS.Inputs[Conditional Split Input].Columns[DimStopID]"
@@ -3620,13 +3436,13 @@ where [refTable].[StopCode] = ?</property>
                           name="Expression"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          containsID="true">[ISNULL](#{Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]}) || [ISNULL](#{Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output].Columns[DimDateID]}) || [ISNULL](#{Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]})</property>
+                          containsID="true">[ISNULL](#{Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output].Columns[DimBusID]}) || [ISNULL](#{Package\Deliver\Deliver\Dim Stop.Outputs[Lookup Match Output].Columns[DimStopID]})</property>
                         <property
                           name="FriendlyExpression"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           containsID="true"
-                          expressionType="Notify">ISNULL(DimBusID) || ISNULL(DimDateID) || ISNULL(DimStopID)</property>
+                          expressionType="Notify">ISNULL(DimBusID) || ISNULL(DimStopID)</property>
                         <property
                           name="EvaluationOrder"
                           dataType="System.Int32"
@@ -3680,14 +3496,9 @@ where [refTable].[StopCode] = ?</property>
                   startId="Package\Deliver\Deliver\Dim Fare.Outputs[Derived Column Output]"
                   endId="Package\Deliver\Deliver\Removing NULLS.Inputs[Conditional Split Input]" />
                 <path
-                  refId="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
-                  name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
-                  endId="Package\Deliver\Deliver\Dim Date.Inputs[Lookup Input]" />
-                <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output1]"
                   name="Lookup Match Output"
-                  startId="Package\Deliver\Deliver\Dim Date.Outputs[Lookup Match Output]"
+                  startId="Package\Deliver\Deliver\Bus Line.Outputs[Lookup Match Output]"
                   endId="Package\Deliver\Deliver\Dim Stop.Inputs[Lookup Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[Lookup Match Output]"
@@ -3703,7 +3514,7 @@ where [refTable].[StopCode] = ?</property>
                   refId="Package\Deliver\Deliver.Paths[Sort Output]"
                   name="Sort Output"
                   startId="Package\Deliver\Deliver\Deduplicate.Outputs[Sort Output]"
-                  endId="Package\Deliver\Deliver\Deliver.Inputs[OLE DB Destination Input]" />
+                  endId="Package\Deliver\Deliver\Fact Stop Times.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Deliver\Deliver.Paths[Valid]"
                   name="Valid"
@@ -4389,7 +4200,7 @@ Where Prev.Hash IS NULL</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[trip_id]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_id]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[trip_id]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[trip_id]"
                           cachedName="trip_id"
                           cachedDataType="str"
@@ -4397,7 +4208,7 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[arrival_time]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[arrival_time]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[arrival_time]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[arrival_time]"
                           cachedName="arrival_time"
                           cachedDataType="str"
@@ -4405,7 +4216,7 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[stop_id]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_id]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_id]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[stop_id]"
                           cachedName="stop_id"
                           cachedDataType="str"
@@ -4413,7 +4224,7 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[stop_sequence]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_sequence]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_sequence]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[stop_sequence]"
                           cachedName="stop_sequence"
                           cachedDataType="str"
@@ -4421,7 +4232,7 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[stop_code]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_code]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_code]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[stop_code]"
                           cachedName="stop_code"
                           cachedDataType="str"
@@ -4429,7 +4240,7 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[trip_headsign]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_headsign]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[trip_headsign]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[trip_headsign]"
                           cachedName="trip_headsign"
                           cachedDataType="str"
@@ -4437,21 +4248,13 @@ Where Prev.Hash IS NULL</property>
                           cachedCodepage="65001" />
                         <inputColumn
                           refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[service_id]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[service_id]"
+                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[service_id]"
                           externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[service_id]"
                           cachedName="service_id"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedCodepage="65001"
                           cachedSortKeyPosition="1" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].Columns[date]"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[date]"
-                          externalMetadataColumnId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input].ExternalColumns[date]"
-                          cachedName="date"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4533,155 +4336,6 @@ Where Prev.Hash IS NULL</property>
                           refId="Package\Load\Copy to Current\Current.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           lineageId="Package\Load\Copy to Current\Current.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load\Copy to Current\Dates"
-                  name="Dates"
-                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
-                  description="Flat File Source"
-                  localeId="4105"
-                  usesDispositions="true"
-                  version="1"
-                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
-                  <properties>
-                    <property
-                      name="RetainNulls"
-                      dataType="System.Boolean"
-                      description="Specifies whether zero-length columns are treated as null.">false</property>
-                    <property
-                      name="FileNameColumnName"
-                      dataType="System.String"
-                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Load\Copy to Current\Dates.Connections[FlatFileConnection]"
-                      name="FlatFileConnection"
-                      connectionManagerID="Package.ConnectionManagers[dates]"
-                      connectionManagerRefId="Package.ConnectionManagers[dates]" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
-                      name="Flat File Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[service_id]"
-                          name="service_id"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[service_id]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          truncationRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[service_id]">
-                          <properties>
-                            <property
-                              name="FastParse"
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
-                            <property
-                              name="UseBinaryFormat"
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format.">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[date]"
-                          name="date"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[date]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          truncationRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[date]">
-                          <properties>
-                            <property
-                              name="FastParse"
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
-                            <property
-                              name="UseBinaryFormat"
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format.">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[exception_type]"
-                          name="exception_type"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[exception_type]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          truncationRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[exception_type]">
-                          <properties>
-                            <property
-                              name="FastParse"
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
-                            <property
-                              name="UseBinaryFormat"
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format.">false</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[service_id]"
-                          name="service_id"
-                          dataType="str"
-                          length="50"
-                          codePage="65001" />
-                        <externalMetadataColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[date]"
-                          name="date"
-                          dataType="str"
-                          length="50"
-                          codePage="65001" />
-                        <externalMetadataColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].ExternalColumns[exception_type]"
-                          name="exception_type"
-                          dataType="str"
-                          length="50"
-                          codePage="65001" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output]"
-                      name="Flat File Source Error Output"
-                      isErrorOut="true">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                          name="Flat File Source Error Output Column"
-                          description="Flat File Source Error Output Column"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                          dataType="text"
-                          codePage="65001" />
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           specialFlags="2" />
                       </outputColumns>
@@ -5076,247 +4730,6 @@ Where Prev.Hash IS NULL</property>
                               dataType="System.Int32"
                               description="The input column associated with this output column"
                               containsID="true">#{Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Right Input].Columns[service_id]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load\Copy to Current\Merge Join 2"
-                  name="Merge Join 2"
-                  componentClassID="{14D43A4F-D7BD-489D-829E-6DE35750CFE4}"
-                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-                  version="1"
-                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
-                  <properties>
-                    <property
-                      name="JoinType"
-                      dataType="System.Int32"
-                      description="Specifies the type of join to perform."
-                      typeConverter="JoinType">1</property>
-                    <property
-                      name="NumKeyColumns"
-                      dataType="System.Int32"
-                      description="Specifies the number of columns in the ordering key.">1</property>
-                    <property
-                      name="TreatNullsAsEqual"
-                      dataType="System.Boolean"
-                      description="Indicates whether the null values are treated as equal values.">true</property>
-                    <property
-                      name="MaxBuffersPerInput"
-                      dataType="System.Int32"
-                      description="Indicates the requested maximum buffers per input before blocking.">5</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]"
-                      name="Merge Join Left Input"
-                      hasSideEffects="true">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[service_id]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[service_id]"
-                          cachedName="service_id"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001"
-                          cachedSortKeyPosition="1" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[trip_id]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[trip_id]"
-                          cachedName="trip_id"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[arrival_time]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[arrival_time]"
-                          cachedName="arrival_time"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_id]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_id]"
-                          cachedName="stop_id"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_sequence]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_sequence]"
-                          cachedName="stop_sequence"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_code]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[stop_code]"
-                          cachedName="stop_code"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[trip_headsign]"
-                          lineageId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output].Columns[trip_headsign]"
-                          cachedName="trip_headsign"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]"
-                      name="Merge Join Right Input"
-                      hasSideEffects="true">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input].Columns[service_id]"
-                          lineageId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[service_id]"
-                          cachedName="service_id"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001"
-                          cachedSortKeyPosition="1" />
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input].Columns[date]"
-                          lineageId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[date]"
-                          cachedName="date"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output]"
-                      name="Merge Join Output"
-                      isSorted="true">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_id]"
-                          name="trip_id"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_id]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[trip_id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[arrival_time]"
-                          name="arrival_time"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[arrival_time]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[arrival_time]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_id]"
-                          name="stop_id"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_id]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_sequence]"
-                          name="stop_sequence"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_sequence]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_sequence]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_code]"
-                          name="stop_code"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[stop_code]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[stop_code]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_headsign]"
-                          name="trip_headsign"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[trip_headsign]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[trip_headsign]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[service_id]"
-                          name="service_id"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[service_id]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input].Columns[service_id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[date]"
-                          name="date"
-                          lineageId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output].Columns[date]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="InputColumnID"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              containsID="true">#{Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input].Columns[date]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -6479,144 +5892,6 @@ Where Prev.Hash IS NULL</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load\Copy to Current\Sort 5"
-                  name="Sort 5"
-                  componentClassID="{5B1A3FF5-D366-4D75-AD1F-F19A36FCBEDB}"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  version="1"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
-                  <properties>
-                    <property
-                      name="EliminateDuplicates"
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values.">false</property>
-                    <property
-                      name="MaximumThreads"
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input].Columns[service_id]"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[service_id]"
-                          cachedName="service_id"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001">
-                          <properties>
-                            <property
-                              name="NewComparisonFlags"
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data.">0</property>
-                            <property
-                              name="NewSortKeyPosition"
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column.">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input].Columns[date]"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[date]"
-                          cachedName="date"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001">
-                          <properties>
-                            <property
-                              name="NewComparisonFlags"
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data.">0</property>
-                            <property
-                              name="NewSortKeyPosition"
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column.">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input].Columns[exception_type]"
-                          lineageId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[exception_type]"
-                          cachedName="exception_type"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedCodepage="65001">
-                          <properties>
-                            <property
-                              name="NewComparisonFlags"
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data.">0</property>
-                            <property
-                              name="NewSortKeyPosition"
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column.">0</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
-                      name="Sort Output"
-                      isSorted="true">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[service_id]"
-                          name="service_id"
-                          lineageId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[service_id]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              name="SortColumnId"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              containsID="true">#{Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[service_id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[date]"
-                          name="date"
-                          lineageId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[date]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="SortColumnId"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              containsID="true">#{Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[date]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[exception_type]"
-                          name="exception_type"
-                          lineageId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output].Columns[exception_type]"
-                          length="50"
-                          dataType="str"
-                          codePage="65001">
-                          <properties>
-                            <property
-                              name="SortColumnId"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              containsID="true">#{Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output].Columns[exception_type]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Load\Copy to Current\Stop Times"
                   name="Stop Times"
                   componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
@@ -7292,33 +6567,23 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
                   name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Stops.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 1.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
-                  name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Stop Times.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort.Inputs[Sort Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+                  name="Flat File Source Output"
+                  startId="Package\Load\Copy to Current\Stops.Outputs[Flat File Source Output]"
+                  endId="Package\Load\Copy to Current\Sort 1.Inputs[Sort Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Flat File Source Output]"
                   name="Flat File Source Output"
                   startId="Package\Load\Copy to Current\Trips.Outputs[Flat File Source Output]"
                   endId="Package\Load\Copy to Current\Sort 3.Inputs[Sort Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
-                  name="Flat File Source Output"
-                  startId="Package\Load\Copy to Current\Dates.Outputs[Flat File Source Output]"
-                  endId="Package\Load\Copy to Current\Sort 5.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Merge Join Output2]"
+                  refId="Package\Load\Copy to Current.Paths[Merge Join Output1]"
                   name="Merge Join Output"
                   startId="Package\Load\Copy to Current\Merge Join.Outputs[Merge Join Output]"
                   endId="Package\Load\Copy to Current\Sort 2.Inputs[Sort Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Merge Join Output1]"
-                  name="Merge Join Output"
-                  startId="Package\Load\Copy to Current\Merge Join 2.Outputs[Merge Join Output]"
-                  endId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Merge Join Output]"
                   name="Merge Join Output"
@@ -7327,33 +6592,28 @@ Where Prev.Hash IS NULL</property>
                 <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output3]"
                   name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 3.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Right Input]" />
+                  startId="Package\Load\Copy to Current\Sort.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Left Input]" />
                 <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output4]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Current.Inputs[OLE DB Destination Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 1.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Right Input]" />
                 <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output5]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join.Inputs[Merge Join Left Input]" />
-                <path
                   refId="Package\Load\Copy to Current.Paths[Sort Output]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 4.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Left Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
-                  name="Sort Output"
-                  startId="Package\Load\Copy to Current\Sort 5.Outputs[Sort Output]"
-                  endId="Package\Load\Copy to Current\Merge Join 2.Inputs[Merge Join Right Input]" />
-                <path
-                  refId="Package\Load\Copy to Current.Paths[Sort Output2]"
                   name="Sort Output"
                   startId="Package\Load\Copy to Current\Sort 2.Outputs[Sort Output]"
                   endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Left Input]" />
+                <path
+                  refId="Package\Load\Copy to Current.Paths[Sort Output1]"
+                  name="Sort Output"
+                  startId="Package\Load\Copy to Current\Sort 3.Outputs[Sort Output]"
+                  endId="Package\Load\Copy to Current\Merge Join 1.Inputs[Merge Join Right Input]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -8606,79 +7866,21 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Deliver\Deliver\Conform"
           TopLeft="380,64" />
         <NodeLayout
-          Size="135,42"
-          Id="Package\Deliver\Deliver\Deduplicate"
-          TopLeft="828,611" />
-        <NodeLayout
           Size="123,42"
-          Id="Package\Deliver\Deliver\Dim Fare"
-          TopLeft="842,425" />
+          Id="Package\Deliver\Deliver\Dim Stop"
+          TopLeft="736,346" />
         <NodeLayout
           Size="161,42"
           Id="Package\Deliver\Deliver\Removing NULLS"
           TopLeft="818,529" />
         <NodeLayout
-          Size="112,42"
-          Id="Package\Deliver\Deliver\Deliver"
-          TopLeft="841,687" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Deliver\Deliver\Dim Stop"
-          TopLeft="736,346" />
-        <NodeLayout
           Size="120,42"
           Id="Package\Deliver\Deliver\Bus Line"
           TopLeft="481,155" />
         <NodeLayout
-          Size="124,42"
-          Id="Package\Deliver\Deliver\Dim Date"
-          TopLeft="579,254" />
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Valid]"
-          TopLeft="897,571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.351171875,11.37548828125,22.70234375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Sort Output]"
-          TopLeft="896.25,653">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="123,42"
+          Id="Package\Deliver\Deliver\Dim Fare"
+          TopLeft="842,425" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
           TopLeft="440,106">
@@ -8751,73 +7953,37 @@ Where Prev.Hash IS NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Lookup Match Output1]"
-          TopLeft="641,296">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="156.5,50"
-              Start="0,0"
-              End="156.5,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="152.5,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="152.5,25"
-                    Point2="156.5,25"
-                    Point3="156.5,29" />
-                  <mssgle:LineSegment
-                    End="156.5,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="30.05861328125,30,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[Lookup Match Output2]"
           TopLeft="541,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100,57"
+              EndConnector="256.5,149"
               Start="0,0"
-              End="100,49.5">
+              End="256.5,141.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,70.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="4,28.5" />
+                    Point1="0,70.5"
+                    Point2="0,74.5"
+                    Point3="4,74.5" />
                   <mssgle:LineSegment
-                    End="96,28.5" />
+                    End="252.5,74.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="96,28.5"
-                    Point2="100,28.5"
-                    Point3="100,32.5" />
+                    Point1="252.5,74.5"
+                    Point2="256.5,74.5"
+                    Point3="256.5,78.5" />
                   <mssgle:LineSegment
-                    End="100,49.5" />
+                    End="256.5,141.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="1.80861328125,33.5,96.3827734375,11.609375"
+              BoundingBox="80.05861328125,79.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8843,6 +8009,72 @@ Where Prev.Hash IS NULL</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Deliver\Deliver\Deduplicate"
+          TopLeft="835,597" />
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[Valid]"
+          TopLeft="900.5,571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.351171875,4.37548828125,22.70234375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Deliver\Deliver\Fact Stop Times"
+          TopLeft="648,675" />
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[Sort Output]"
+          TopLeft="902.5,639">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176.5,36"
+              Start="0,0"
+              End="-176.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="-4,18" />
+                  <mssgle:LineSegment
+                    End="-172.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172.5,18"
+                    Point2="-176.5,18"
+                    Point3="-176.5,22" />
+                  <mssgle:LineSegment
+                    End="-176.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -8851,19 +8083,6 @@ Where Prev.Hash IS NULL</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Deliver">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8913,34 +8132,11 @@ Where Prev.Hash IS NULL</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deliver\Deliver\Dim Date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load\Calculate Delta">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="103,42"
           Id="Package\Load\Calculate Delta\Load"
@@ -8980,9 +8176,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9013,31 +8207,35 @@ Where Prev.Hash IS NULL</property>
     design-time-name="Package\Load\Copy to Current">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="99,42"
-          Id="Package\Load\Copy to Current\Sort"
-          TopLeft="179,133" />
+          Size="108,42"
+          Id="Package\Load\Copy to Current\Sort 4"
+          TopLeft="386,477" />
         <NodeLayout
           Size="103,42"
           Id="Package\Load\Copy to Current\Trips"
           TopLeft="517,231" />
         <NodeLayout
-          Size="106,42"
-          Id="Package\Load\Copy to Current\Stops"
-          TopLeft="373,53" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Load\Copy to Current\Sort 2"
-          TopLeft="273,307" />
+          Size="115,42"
+          Id="Package\Load\Copy to Current\Current"
+          TopLeft="378,568" />
         <NodeLayout
           Size="133,42"
           Id="Package\Load\Copy to Current\Stop Times"
           TopLeft="163,53" />
         <NodeLayout
+          Size="140,42"
+          Id="Package\Load\Copy to Current\Merge Join 1"
+          TopLeft="365,399" />
+        <NodeLayout
           Size="108,42"
-          Id="Package\Load\Copy to Current\Sort 1"
-          TopLeft="372,129" />
+          Id="Package\Load\Copy to Current\Sort 2"
+          TopLeft="273,307" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Load\Copy to Current\Sort"
+          TopLeft="179,133" />
         <NodeLayout
           Size="108,42"
           Id="Package\Load\Copy to Current\Sort 3"
@@ -9048,102 +8246,58 @@ Where Prev.Hash IS NULL</property>
           TopLeft="258,227" />
         <NodeLayout
           Size="108,42"
-          Id="Package\Load\Copy to Current\Sort 5"
-          TopLeft="688,475" />
+          Id="Package\Load\Copy to Current\Sort 1"
+          TopLeft="372,129" />
         <NodeLayout
-          Size="108,42"
-          Id="Package\Load\Copy to Current\Sort 4"
-          TopLeft="386,477" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Load\Copy to Current\Merge Join 1"
-          TopLeft="365,399" />
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Load\Copy to Current\Current"
-          TopLeft="551,641" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Load\Copy to Current\Merge Join 2"
-          TopLeft="534,555" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load\Copy to Current\Dates"
-          TopLeft="695,397" />
+          Size="106,42"
+          Id="Package\Load\Copy to Current\Stops"
+          TopLeft="373,53" />
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output5]"
-          TopLeft="228.5,175">
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
+          TopLeft="426,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74.5,52"
+              EndConnector="0,34"
               Start="0,0"
-              End="74.5,44.5">
+              End="0,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8235294117647" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.8235294117647"
-                    Point2="0,30.8235294117647"
-                    Point3="4,30.8235294117647" />
-                  <mssgle:LineSegment
-                    End="70.5,30.8235294117647" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.5,30.8235294117647"
-                    Point2="74.5,30.8235294117647"
-                    Point3="74.5,34.8235294117647" />
-                  <mssgle:LineSegment
-                    End="74.5,44.5" />
+                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
-          TopLeft="426,171">
+          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
+          TopLeft="229,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-82,56"
+              EndConnector="0,38"
               Start="0,0"
-              End="-82,48.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.1945701357466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.1945701357466"
-                    Point2="0,33.1945701357466"
-                    Point3="-4,33.1945701357466" />
-                  <mssgle:LineSegment
-                    End="-78,33.1945701357466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-78,33.1945701357466"
-                    Point2="-82,33.1945701357466"
-                    Point3="-82,37.1945701357466" />
-                  <mssgle:LineSegment
-                    End="-82,48.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
           TopLeft="571,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9173,13 +8327,11 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
+          Id="Package\Load\Copy to Current.Paths[Sort Output]"
           TopLeft="327,349">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9209,129 +8361,97 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output1]"
-          TopLeft="742,517">
+          Id="Package\Load\Copy to Current.Paths[Sort Output2]"
+          TopLeft="426,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-116,38"
+              EndConnector="-82,56"
               Start="0,0"
-              End="-116,30.5">
+              End="-82,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5423728813559" />
+                    End="0,29.1945701357466" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.5423728813559"
-                    Point2="0,22.5423728813559"
-                    Point3="-4,22.5423728813559" />
+                    Point1="0,29.1945701357466"
+                    Point2="0,33.1945701357466"
+                    Point3="-4,33.1945701357466" />
                   <mssgle:LineSegment
-                    End="-112,22.5423728813559" />
+                    End="-78,33.1945701357466" />
                   <mssgle:CubicBezierSegment
-                    Point1="-112,22.5423728813559"
-                    Point2="-116,22.5423728813559"
-                    Point3="-116,26.5423728813559" />
+                    Point1="-78,33.1945701357466"
+                    Point2="-82,33.1945701357466"
+                    Point3="-82,37.1945701357466" />
                   <mssgle:LineSegment
-                    End="-116,30.5" />
+                    End="-82,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Sort Output]"
-          TopLeft="440,519">
+          Id="Package\Load\Copy to Current.Paths[Sort Output4]"
+          TopLeft="437.75,519">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="142,36"
+              EndConnector="0,49"
               Start="0,0"
-              End="142,28.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.3559322033898" />
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load\Copy to Current.Paths[Sort Output3]"
+          TopLeft="228.5,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.5,52"
+              Start="0,0"
+              End="74.5,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8235294117647" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.3559322033898"
-                    Point2="0,21.3559322033898"
-                    Point3="4,21.3559322033898" />
+                    Point1="0,26.8235294117647"
+                    Point2="0,30.8235294117647"
+                    Point3="4,30.8235294117647" />
                   <mssgle:LineSegment
-                    End="138,21.3559322033898" />
+                    End="70.5,30.8235294117647" />
                   <mssgle:CubicBezierSegment
-                    Point1="138,21.3559322033898"
-                    Point2="142,21.3559322033898"
-                    Point3="142,25.3559322033898" />
+                    Point1="70.5,30.8235294117647"
+                    Point2="74.5,30.8235294117647"
+                    Point3="74.5,34.8235294117647" />
                   <mssgle:LineSegment
-                    End="142,28.5" />
+                    End="74.5,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Merge Join Output2]"
-          TopLeft="325.25,269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Merge Join Output1]"
-          TopLeft="606.25,597">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9353,14 +8473,12 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output3]"
-          TopLeft="229,95">
+          Id="Package\Load\Copy to Current.Paths[Merge Join Output1]"
+          TopLeft="325.25,269">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9377,57 +8495,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output2]"
-          TopLeft="426,95">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load\Copy to Current.Paths[Flat File Source Output1]"
-          TopLeft="745.25,439">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9449,9 +8517,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9474,7 +8540,7 @@ Where Prev.Hash IS NULL</property>
     design-time-name="Package\Load\Move Current to Previous">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="120,42"
           Id="Package\Load\Move Current to Previous\Previous"
@@ -9514,9 +8580,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9537,6 +8601,19 @@ Where Prev.Hash IS NULL</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load\Move Current to Previous\Previous">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deliver\Deliver\Fact Stop Times">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
