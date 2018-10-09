@@ -1,143 +1,51 @@
 <?xml version="1.0"?>
-<DTS:Executable
-  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ExecutableType="SSIS.Package.3"
-  DTS:CreatorName="PCGUS\ygrim"
-  DTS:CreatorComputerName="MOLYGRIM2"
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
   DTS:CreationDate="7/21/2014 4:20:20 PM"
-  DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{F9811C2F-C942-4C5D-BEC1-FBB590636D21}"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="MOLYGRIM2"
+  DTS:CreatorName="PCGUS\ygrim"
+  DTS:DTSID="{BB2A9EFB-07F3-4541-A2DA-CF89E5A3FF0A}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
   DTS:LocaleID="4105"
   DTS:ObjectName="Master"
-  DTS:DTSID="{BB2A9EFB-07F3-4541-A2DA-CF89E5A3FF0A}"
-  DTS:CreationName="SSIS.Package.3">
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{04E490BF-066F-4E87-84F9-D8AA39D75130}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
-      DTS:Namespace="User"
-      DTS:IncludeInDebugDump="2345"
-      DTS:ObjectName="ZipFile"
+      DTS:CreationName=""
       DTS:DTSID="{7F2F14AE-D82A-4ED0-B2A3-6595F99F69F0}"
-      DTS:CreationName="">
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ZipFile">
       <DTS:VariableValue
         DTS:DataType="8">file.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\For Each Zip File"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="For Each Zip File"
-      DTS:DTSID="{A832D1AA-1217-431E-BB05-4E528D78D9B8}"
-      DTS:Description="Foreach Loop Container"
-      DTS:CreationName="STOCK:FOREACHLOOP">
-      <DTS:ForEachEnumerator
-        DTS:ObjectName="{4D1E708C-AB35-4CA9-8CC8-15A0CAC028E5}"
-        DTS:DTSID="{4D1E708C-AB35-4CA9-8CC8-15A0CAC028E5}"
-        DTS:CreationName="DTS.ForEachFileEnumerator.3">
-        <DTS:PropertyExpression
-          DTS:Name="Directory">@[$Project::ZipFileFolder]</DTS:PropertyExpression>
-        <DTS:ObjectData>
-          <ForEachFileEnumeratorProperties>
-            <FEFEProperty
-              Folder="C:\\Users\\Yazid\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
-            <FEFEProperty
-              FileSpec="*.zip" />
-            <FEFEProperty
-              FileNameRetrievalType="1" />
-            <FEFEProperty
-              Recurse="0" />
-          </ForEachFileEnumeratorProperties>
-        </DTS:ObjectData>
-      </DTS:ForEachEnumerator>
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\For Each Zip File\Unzip to Working Folder"
-          DTS:ExecutableType="ProgettoMultimedia.TaskUnZip_2012.TaskUnZip, ProgettoMultimedia.TaskUnZip_2012, Version=1.4.0.0, Culture=neutral, PublicKeyToken=08d5a3e5c5e98dbc"
-          DTS:ThreadHint="0"
-          DTS:TaskContact="TaskUnZip: http://www.codeplex.com/TaskUnZip/"
-          DTS:LocaleID="-1"
-          DTS:DelayValidation="True"
-          DTS:ObjectName="Unzip to Working Folder"
-          DTS:DTSID="{B1E050D2-AA62-4184-9B1C-16FEA2302F47}"
-          DTS:Description="TaskUnZip 2012"
-          DTS:CreationName="ProgettoMultimedia.TaskUnZip_2012.TaskUnZip, ProgettoMultimedia.TaskUnZip_2012, Version=1.4.0.0, Culture=neutral, PublicKeyToken=08d5a3e5c5e98dbc">
-          <DTS:Variables />
-          <DTS:PropertyExpression
-            DTS:Name="FileZip">@[User::ZipFile]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="FolderDestination">@[$Project::WorkingFolder]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="FolderSource">@[$Project::ZipFileFolder]</DTS:PropertyExpression>
-          <DTS:ObjectData>
-            <InnerObject>
-              <Comment
-                Type="8"
-                Value="" />
-              <FileZip
-                Type="8"
-                Value="file.zip" />
-              <FolderDestination
-                Type="8"
-                Value="C:\\Users\\Yazid\\Documents\\GitHub\\MSBI_PracticeProject\\Data\\gtfs_stm\\" />
-              <FolderSource
-                Type="8"
-                Value="C:\\Users\\Yazid\Documents\\GitHub\\MSBI_PracticeProject\\Data\\" />
-              <OverwriteZipFile
-                Type="11"
-                Value="-1" />
-              <Password
-                Type="8"
-                Value="" />
-              <RecurseSubFolder
-                Type="11"
-                Value="-1" />
-              <RegExFileFilter
-                Type="8"
-                Value=".*" />
-              <TestArchive
-                Type="11"
-                Value="0" />
-              <TypeOperation
-                Type="3"
-                Value="2" />
-            </InnerObject>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:ForEachVariableMappings>
-        <DTS:ForEachVariableMapping
-          DTS:VariableName="User::ZipFile"
-          DTS:ValueIndex="0"
-          DTS:ObjectName="{01F272D4-A21C-442C-83B5-242CE76E83DB}"
-          DTS:DTSID="{01F272D4-A21C-442C-83B5-242CE76E83DB}"
-          DTS:CreationName="" />
-      </DTS:ForEachVariableMappings>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Load Dimensions"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D5BD73AC-1280-4B3A-A790-CD68F4C4D169}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Load Dimensions"
-      DTS:DTSID="{D5BD73AC-1280-4B3A-A790-CD68F4C4D169}"
-      DTS:Description="Sequence Container"
-      DTS:CreationName="STOCK:SEQUENCE">
+      DTS:ObjectName="Load Dimensions">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimBus"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{49C91053-33E6-4E15-AEF2-75CB067F1637}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimBus"
-          DTS:DTSID="{49C91053-33E6-4E15-AEF2-75CB067F1637}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -148,13 +56,13 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimDate"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{E6286F3B-68A8-4ABC-9DCE-234F99A33F93}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimDate"
-          DTS:DTSID="{E6286F3B-68A8-4ABC-9DCE-234F99A33F93}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -165,13 +73,13 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimFare"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{6D3169F0-D3AA-4208-999E-8B4C35BE4949}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimFare"
-          DTS:DTSID="{6D3169F0-D3AA-4208-999E-8B4C35BE4949}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -182,13 +90,13 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Dimensions\DimStops"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{1B0A8DF9-680F-4D77-BE98-F75239BDF92E}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimStops"
-          DTS:DTSID="{1B0A8DF9-680F-4D77-BE98-F75239BDF92E}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -201,23 +109,23 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load Facts"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{907C2161-1A89-41D1-B917-E600E92E5E8F}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Load Facts"
-      DTS:DTSID="{907C2161-1A89-41D1-B917-E600E92E5E8F}"
-      DTS:Description="Sequence Container"
-      DTS:CreationName="STOCK:SEQUENCE">
+      DTS:ObjectName="Load Facts">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load Facts\FactStopTime"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{DBBF421E-9BF4-4002-9D90-0AD688F887D8}"
           DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:LocaleID="-1"
           DTS:ObjectName="FactStopTime"
-          DTS:DTSID="{DBBF421E-9BF4-4002-9D90-0AD688F887D8}"
-          DTS:Description="Execute Package Task"
-          DTS:CreationName="SSIS.ExecutePackageTask.3">
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
@@ -228,24 +136,41 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Unzip"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{60F17ED7-B282-42F1-86BC-6B46C45EFFBD}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Unzip"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\7-Zip\7z.exe"
+          Arguments="e &quot;C:\Users\yazidgrim\workspace\MSBI_PracticeProject\Data\*.zip&quot;"
+          WorkingDirectory="C:\Data" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:From="Package\For Each Zip File"
-      DTS:To="Package\Load Dimensions"
+      DTS:CreationName=""
+      DTS:DTSID="{028DB022-206B-4BFF-B18A-A63D73E1DE19}"
+      DTS:From="Package\Unzip"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:DTSID="{EBC7F894-D055-4F6C-9F15-276543F72288}"
-      DTS:CreationName="" />
+      DTS:To="Package\Load Dimensions" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B602A82D-56C3-4200-AC2F-3E3CF2075372}"
       DTS:From="Package\Load Dimensions"
-      DTS:To="Package\Load Facts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:DTSID="{B602A82D-56C3-4200-AC2F-3E3CF2075372}"
-      DTS:CreationName="" />
+      DTS:To="Package\Load Facts" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -259,17 +184,6 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="193,42"
-          Id="Package\For Each Zip File\Unzip to Working Folder"
-          TopLeft="7,21" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,92"
-          Size="205,135"
-          Id="Package\For Each Zip File"
-          TopLeft="355,94" />
         <NodeLayout
           Size="116,42"
           Id="Package\Load Dimensions\DimBus"
@@ -293,40 +207,6 @@
           Size="596,174"
           Id="Package\Load Dimensions"
           TopLeft="190,284" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="457.5,229">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30.5,55"
-              Start="0,0"
-              End="30.5,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="26.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.5,27.5"
-                    Point2="30.5,27.5"
-                    Point3="30.5,31.5" />
-                  <mssgle:LineSegment
-                    End="30.5,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="142,42"
           Id="Package\Load Facts\FactStopTime"
@@ -364,6 +244,44 @@
                     Point3="-39,33.5" />
                   <mssgle:LineSegment
                     End="-39,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="105,42"
+          Id="Package\Unzip"
+          TopLeft="388,116" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="440.5,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.5,126"
+              Start="0,0"
+              End="47.5,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
+                  <mssgle:LineSegment
+                    End="43.5,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.5,63"
+                    Point2="47.5,63"
+                    Point3="47.5,67" />
+                  <mssgle:LineSegment
+                    End="47.5,118.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
