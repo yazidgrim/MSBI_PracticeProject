@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="LoadDimBusLine"
   DTS:PackageType="5"
-  DTS:VersionBuild="123"
-  DTS:VersionGUID="{5BF71688-2D7C-4824-A2BF-66A05BF0F804}">
+  DTS:VersionBuild="124"
+  DTS:VersionGUID="{3C57997F-BAE0-43E7-A826-D85865B33D7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -198,7 +198,84 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="STM_STG"
+      DTS:CreationName="DTS.LogProviderSQLServer.3"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{666B558B-0C5B-4ED7-8044-13D4AECEC681}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,7,OnError,13,OnInformation,9,OnWarning</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{666B558B-0C5B-4ED7-8044-13D4AECEC681}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Clean"
@@ -209,6 +286,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Clean">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Clean\Clean"
@@ -220,6 +299,8 @@
           DTS:ObjectName="Clean"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -1475,6 +1556,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Conform">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Conform\Conform"
@@ -1486,6 +1569,8 @@
           DTS:ObjectName="Conform"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -2856,6 +2941,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Deliver">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Deliver\Deliver"
@@ -2867,6 +2954,8 @@
           DTS:ObjectName="Deliver"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -3721,6 +3810,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load\Calculate Delta"
@@ -3732,6 +3823,8 @@
           DTS:ObjectName="Calculate Delta"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -4194,6 +4287,8 @@ Where Prev.Hash IS NULL</property>
           DTS:ObjectName="Copy to Current"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -5929,6 +6024,8 @@ Where Prev.Hash IS NULL</property>
           DTS:ObjectName="Move Current to Previous"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -6390,6 +6487,8 @@ Where Prev.Hash IS NULL</property>
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E8AC005F-AEBE-48BA-8B1C-F04C1C7FDA5A}"
@@ -6407,6 +6506,8 @@ Where Prev.Hash IS NULL</property>
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E8AC005F-AEBE-48BA-8B1C-F04C1C7FDA5A}"
@@ -6801,9 +6902,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6825,33 +6924,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Output]"
-          TopLeft="502,206">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6885,8 +6958,64 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Clean\Clean.Paths[Derived Column Output]"
+          TopLeft="502,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Clean\Clean.Paths[Derived Column Error Output1]"
+          TopLeft="600,276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,-22.3333333333333"
+              Start="0,0"
+              End="100.5,-22.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.4220183486238,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.4220183486238,0"
+                    Point2="62.4220183486238,0"
+                    Point3="62.4220183486238,-4" />
+                  <mssgle:LineSegment
+                    End="62.4220183486238,-18.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.4220183486238,-18.3333333333333"
+                    Point2="62.4220183486238,-22.3333333333333"
+                    Point3="66.4220183486238,-22.3333333333333" />
+                  <mssgle:LineSegment
+                    End="100.5,-22.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-2.53936837012616,1,129.9227734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6923,42 +7052,6 @@ Where Prev.Hash IS NULL</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="9.53861328125001,-17.609375,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clean\Clean.Paths[Derived Column Error Output1]"
-          TopLeft="600,276">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108,-22.3333333333333"
-              Start="0,0"
-              End="100.5,-22.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="58.4220183486238,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.4220183486238,0"
-                    Point2="62.4220183486238,0"
-                    Point3="62.4220183486238,-4" />
-                  <mssgle:LineSegment
-                    End="62.4220183486238,-18.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="62.4220183486238,-18.3333333333333"
-                    Point2="62.4220183486238,-22.3333333333333"
-                    Point3="66.4220183486238,-22.3333333333333" />
-                  <mssgle:LineSegment
-                    End="100.5,-22.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-2.53936837012616,1,129.9227734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7319,6 +7412,14 @@ Where Prev.Hash IS NULL</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="167,42"
+          Id="Package\Deliver\Deliver\OLE DB Command"
+          TopLeft="433,210.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Deliver\Deliver\Insert Destination"
+          TopLeft="5.50000000000006,209.5" />
+        <NodeLayout
           Size="159,42"
           Id="Package\Deliver\Deliver\Conform"
           TopLeft="234,5.5" />
@@ -7326,72 +7427,6 @@ Where Prev.Hash IS NULL</property>
           Size="210,42"
           Id="Package\Deliver\Deliver\Slowly Changing Dimension"
           TopLeft="208.5,107.5" />
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
-          TopLeft="313.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Deliver\Deliver\Insert Destination"
-          TopLeft="5.50000000000006,209.5" />
-        <EdgeLayout
-          Id="Package\Deliver\Deliver.Paths[New Output]"
-          TopLeft="279.833333333333,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-192.333333333333,60"
-              Start="0,0"
-              End="-192.333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2722117202268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2722117202268"
-                    Point2="0,24.2722117202268"
-                    Point3="-4,24.2722117202268" />
-                  <mssgle:LineSegment
-                    End="-188.333333333333,24.2722117202268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-188.333333333333,24.2722117202268"
-                    Point2="-192.333333333333,24.2722117202268"
-                    Point3="-192.333333333333,28.2722117202268" />
-                  <mssgle:LineSegment
-                    End="-192.333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-123.258053385417,29.2722117202268,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Deliver\Deliver\OLE DB Command"
-          TopLeft="433,210.5" />
         <EdgeLayout
           Id="Package\Deliver\Deliver.Paths[Changing Attribute Updates Output]"
           TopLeft="347.166666666667,149.5">
@@ -7425,6 +7460,64 @@ Where Prev.Hash IS NULL</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="6.1327604166666,29.6767485822306,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[OLE DB Source Output]"
+          TopLeft="313.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deliver\Deliver.Paths[New Output]"
+          TopLeft="279.833333333333,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-192.333333333333,60"
+              Start="0,0"
+              End="-192.333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2722117202268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2722117202268"
+                    Point2="0,24.2722117202268"
+                    Point3="-4,24.2722117202268" />
+                  <mssgle:LineSegment
+                    End="-188.333333333333,24.2722117202268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-188.333333333333,24.2722117202268"
+                    Point2="-192.333333333333,24.2722117202268"
+                    Point3="-192.333333333333,28.2722117202268" />
+                  <mssgle:LineSegment
+                    End="-192.333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.258053385417,29.2722117202268,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7509,7 +7602,7 @@ Where Prev.Hash IS NULL</property>
     design-time-name="Package\Load\Calculate Delta">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="103,42"
           Id="Package\Load\Calculate Delta\Load"
@@ -7549,9 +7642,7 @@ Where Prev.Hash IS NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7584,9 +7675,9 @@ Where Prev.Hash IS NULL</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="108,42"
-          Id="Package\Load\Copy to Current\Route"
-          TopLeft="480,75" />
+          Size="151,42"
+          Id="Package\Load\Copy to Current\ExecutionGUID"
+          TopLeft="309,358" />
         <NodeLayout
           Size="115,42"
           Id="Package\Load\Copy to Current\Distinct"
@@ -7596,9 +7687,13 @@ Where Prev.Hash IS NULL</property>
           Id="Package\Load\Copy to Current\Trip"
           TopLeft="225,77" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Load\Copy to Current\ExecutionGUID"
-          TopLeft="309,358" />
+          Size="108,42"
+          Id="Package\Load\Copy to Current\Sort 1"
+          TopLeft="480,160" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Load\Copy to Current\Route"
+          TopLeft="480,75" />
         <NodeLayout
           Size="131,42"
           Id="Package\Load\Copy to Current\Merge Join"
@@ -7611,10 +7706,6 @@ Where Prev.Hash IS NULL</property>
           Size="115,42"
           Id="Package\Load\Copy to Current\Current"
           TopLeft="322,499" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Load\Copy to Current\Sort 1"
-          TopLeft="480,160" />
         <EdgeLayout
           Id="Package\Load\Copy to Current.Paths[Sort Output2]"
           TopLeft="380.5,467">
